@@ -1,0 +1,30 @@
+msgid "IDS_MEDIABR_OPT_SLIDE_SHOW"
+msgstr "投影片放映"
+
+msgid "IDS_MEDIABR_BODY_SLIDESHOW_INTERVAL"
+msgstr "投影片放映間隔"
+
+msgid "IDS_MEDIABR_OPT_2_SECONDS"
+msgstr "2 秒"
+
+msgid "IDS_MEDIABR_OPT_3_SECONDS"
+msgstr "3 秒"
+
+msgid "IDS_MEDIABR_BODY_SHUFFLE"
+msgstr "隨機播放"
+
+msgid "IDS_MEDIABR_BODY_REPEAT"
+msgstr "重複"
+
+msgid "IDS_MEDIABR_BODY_SUBTITLES"
+msgstr "字幕"
+
+msgid "IDS_MEDIABR_BODY_5_SECONDS"
+msgstr "5 秒"
+
+msgid "IDS_MEDIABR_BODY_10_SECONDS"
+msgstr "10 秒"
+
+msgid "IDS_MEDIABR_BODY_20_SECONDS"
+msgstr "20 秒"
+

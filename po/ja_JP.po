@@ -1,0 +1,30 @@
+msgid "IDS_MEDIABR_OPT_SLIDE_SHOW"
+msgstr "スライドショー"
+
+msgid "IDS_MEDIABR_BODY_SLIDESHOW_INTERVAL"
+msgstr "スライドショーの​間隔"
+
+msgid "IDS_MEDIABR_OPT_2_SECONDS"
+msgstr "2秒"
+
+msgid "IDS_MEDIABR_OPT_3_SECONDS"
+msgstr "3秒"
+
+msgid "IDS_MEDIABR_BODY_SHUFFLE"
+msgstr "シャッフル"
+
+msgid "IDS_MEDIABR_BODY_REPEAT"
+msgstr "繰り返し"
+
+msgid "IDS_MEDIABR_BODY_SUBTITLES"
+msgstr "サブタイトル"
+
+msgid "IDS_MEDIABR_BODY_5_SECONDS"
+msgstr "5秒"
+
+msgid "IDS_MEDIABR_BODY_10_SECONDS"
+msgstr "10秒"
+
+msgid "IDS_MEDIABR_BODY_20_SECONDS"
+msgstr "20秒"
+

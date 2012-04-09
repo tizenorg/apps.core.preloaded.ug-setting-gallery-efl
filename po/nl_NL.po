@@ -1,0 +1,45 @@
+msgid "IDS_MEDIABR_OPT_SLIDE_SHOW"
+msgstr "Diapresentatie"
+
+msgid "IDS_MEDIABR_BODY_SLIDESHOW_INTERVAL"
+msgstr "Interval diashow"
+
+msgid "IDS_MEDIABR_OPT_SLIDE"
+msgstr "Pictogram"
+
+msgid "IDS_MEDIABR_OPT_2_SECONDS"
+msgstr "2 seconden"
+
+msgid "IDS_MEDIABR_OPT_3_SECONDS"
+msgstr "3 seconden"
+
+msgid "IDS_MEDIABR_BODY_SHUFFLE"
+msgstr "Willekeurig"
+
+msgid "IDS_MEDIABR_BODY_REPEAT"
+msgstr "Herhalen"
+
+msgid "IDS_MEDIABR_BODY_TRANSITION_EFFECT"
+msgstr "Overgangseffect"
+
+msgid "IDS_MEDIABR_BODY_FADE"
+msgstr "Uitvloeien"
+
+msgid "IDS_MEDIABR_BODY_BLIND"
+msgstr "Jaloezie"
+
+msgid "IDS_MEDIABR_BODY_DISSOLVE"
+msgstr "Oplossen"
+
+msgid "IDS_MEDIABR_BODY_SUBTITLES"
+msgstr "Ondertitels"
+
+msgid "IDS_MEDIABR_BODY_5_SECONDS"
+msgstr "5 seconden"
+
+msgid "IDS_MEDIABR_BODY_10_SECONDS"
+msgstr "10 seconden"
+
+msgid "IDS_MEDIABR_BODY_20_SECONDS"
+msgstr "20 seconden"
+

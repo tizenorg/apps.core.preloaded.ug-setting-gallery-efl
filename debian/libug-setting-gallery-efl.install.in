@@ -1,0 +1,7 @@
+#@PREFIX@/bin/*
+#@PREFIX@/lib/ug/*.so*
+#@PREFIX@/share/ug/icon/*.png
+#@PREFIX@/share/ug/edje/*.edj
+#@PREFIX@/share/locale/*
+/opt/ug/lib/*
+/opt/ug/res/*
