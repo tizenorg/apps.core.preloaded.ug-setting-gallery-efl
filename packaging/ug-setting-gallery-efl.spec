@@ -5,6 +5,7 @@ Release:    1
 Group:      TBD
 License:    Samsung Proprietary License
 Source0:    %{name}-%{version}.tar.gz
+Source1001: packaging/ug-setting-gallery-efl.manifest 
 BuildRequires: pkgconfig(bundle)
 BuildRequires: pkgconfig(dlog)
 BuildRequires: pkgconfig(elementary)
@@ -22,6 +23,7 @@ ug setting gallery efl.
 %setup -q -n %{name}-%{version}
 
 %build
+cp %{SOURCE1001} .
 export LDFLAGS+="-Wl,--rpath=%{_prefix}/lib -Wl,--as-needed"
 
 LDFLAGS="$LDFLAGS" cmake . -DCMAKE_INSTALL_PREFIX=%{_prefix}
@@ -44,6 +46,7 @@ make %{?jobs:-j%jobs}
 %postun -p /sbin/ldconfig
 
 %files -f ug-setting-gallery-efl.lang
+%manifest ug-setting-gallery-efl.manifest
 /opt/ug/lib/libug-setting-gallery-efl.so
 /opt/ug/lib/libug-setting-gallery-efl.so.0.1.0
 
