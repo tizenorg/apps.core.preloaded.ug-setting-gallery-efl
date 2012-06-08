@@ -1,0 +1,30 @@
+msgid "IDS_MEDIABR_OPT_SLIDE_SHOW"
+msgstr "Presentazione"
+
+msgid "IDS_MEDIABR_BODY_SLIDESHOW_INTERVAL"
+msgstr "Intervallo presentazione"
+
+msgid "IDS_MEDIABR_OPT_2_SECONDS"
+msgstr "2 secondi"
+
+msgid "IDS_MEDIABR_OPT_3_SECONDS"
+msgstr "3 secondi"
+
+msgid "IDS_MEDIABR_BODY_SHUFFLE"
+msgstr "Riproduzione casuale"
+
+msgid "IDS_MEDIABR_BODY_REPEAT"
+msgstr "Ripeti"
+
+msgid "IDS_MEDIABR_BODY_SUBTITLES"
+msgstr "Sottotitoli"
+
+msgid "IDS_MEDIABR_BODY_5_SECONDS"
+msgstr "5 secondi"
+
+msgid "IDS_MEDIABR_BODY_10_SECONDS"
+msgstr "10 secondi"
+
+msgid "IDS_MEDIABR_BODY_20_SECONDS"
+msgstr "20 secondi"
+

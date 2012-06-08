@@ -1,0 +1,21 @@
+Source: ug-setting-gallery-efl
+Section: libs
+Priority: extra
+maintainer: Sangjin Han <sjhan.haN@samsung.com>, Li Suxia <suxia.li@samsung.com>, Tang Feng <feng.tang@samsung.com>, Hyunwoo Kim <hw4444.kim@samsung.com>, Jisung Ahn <jcastle.ahn@samsung.com>, Jiansong Jin <jiansong.jin@samsung.com>, Jonghyuk Lee <jhyuk47.lee@samsung.com>, Chaolong Lin <chaolong.lin@samsung.com>, Yongjun Zhao <yj123.zhao@samsung.com>, Hongying Liu <ava.liu@samsung.com>, JongDong Lee <jongdong.lee@samsung.com>
+Build-Depends: debhelper (>= 5), libelm-dev, libbundle-dev, libui-gadget-dev, libslp-setting-dev, libslp-setting-keys-dev, dlog-dev
+Standards-Version: 0.0.1
+
+Package: libug-setting-gallery-efl
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: UI gadget for setting gallery
+Version: 0.0.1
+
+Package: libug-setting-gallery-efl-dbg
+Section: debug
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libug-setting-gallery-efl(= ${Source-Version})
+Description: UI gadget for setting gallery (unstripped)
+Version: 0.0.1
+

@@ -1,0 +1,30 @@
+msgid "IDS_MEDIABR_OPT_SLIDE_SHOW"
+msgstr "Diashow"
+
+msgid "IDS_MEDIABR_BODY_SLIDESHOW_INTERVAL"
+msgstr "Diashowintervall"
+
+msgid "IDS_MEDIABR_OPT_2_SECONDS"
+msgstr "2 Sekunden"
+
+msgid "IDS_MEDIABR_OPT_3_SECONDS"
+msgstr "3 Sekunden"
+
+msgid "IDS_MEDIABR_BODY_SHUFFLE"
+msgstr "Zufallswiedergabe"
+
+msgid "IDS_MEDIABR_BODY_REPEAT"
+msgstr "Wiederholen"
+
+msgid "IDS_MEDIABR_BODY_SUBTITLES"
+msgstr "Untertitel"
+
+msgid "IDS_MEDIABR_BODY_5_SECONDS"
+msgstr "5 Sekunden"
+
+msgid "IDS_MEDIABR_BODY_10_SECONDS"
+msgstr "10 Sekunden"
+
+msgid "IDS_MEDIABR_BODY_20_SECONDS"
+msgstr "20 Sekunden"
+

@@ -1,0 +1,7 @@
+ug-setting-gallery-efl (1.0.17) unstable; urgency=low
+
+   * Initial version
+   * Git: pkgs/u/ug-setting-gallery-efl.git
+   * Tag: ug-setting-gallery-efl_1.0.17
+
+ -- Jonghyuk Lee <jhyuk47.lee@samsung.com>  Wed, 07 Dec 2011 15:30:52 +0900
