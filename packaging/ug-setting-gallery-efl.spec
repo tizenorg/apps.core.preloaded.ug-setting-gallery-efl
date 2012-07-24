@@ -3,7 +3,7 @@ Summary:    UG setting gallery ELF
 Version:	1.0.17
 Release:    1
 Group:      TBD
-License:    Samsung Proprietary License
+License:    Flora Software License
 Source0:    %{name}-%{version}.tar.gz
 Source1001: packaging/ug-setting-gallery-efl.manifest 
 BuildRequires: pkgconfig(bundle)
