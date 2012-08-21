@@ -1,51 +1,51 @@
 msgid "IDS_MEDIABR_OPT_SLIDE_SHOW"
-msgstr "Diaporama"
+msgstr "Prezentace"
 
 msgid "IDS_MEDIABR_BODY_SLIDESHOW_INTERVAL"
-msgstr "Intervalle du diaporama"
+msgstr "Interval prezentace"
 
 msgid "IDS_MEDIABR_OPT_SLIDE"
-msgstr "Défilement"
+msgstr "Sklouznutí"
 
 msgid "IDS_MEDIABR_OPT_2_SECONDS"
-msgstr "2 secondes"
+msgstr "2 sekund"
 
 msgid "IDS_MEDIABR_OPT_3_SECONDS"
-msgstr "3 secondes"
+msgstr "3 sekundy"
 
 msgid "IDS_MEDIABR_BODY_SHUFFLE"
-msgstr "Mode aléatoire"
+msgstr "Náhodně"
 
 msgid "IDS_MEDIABR_BODY_REPEAT"
-msgstr "Répéter"
+msgstr "Opakovat"
 
 msgid "IDS_MEDIABR_BODY_TRANSITION_EFFECT"
-msgstr "Effet de transition"
+msgstr "Přechodový efekt"
 
 msgid "IDS_MEDIABR_BODY_FADE"
-msgstr "Fondu"
+msgstr "Zvolna mizet"
 
 msgid "IDS_MEDIABR_BODY_BLIND"
-msgstr "Stores vénitiens"
+msgstr "Roleta"
 
 msgid "IDS_MEDIABR_BODY_DISSOLVE"
-msgstr "Fondu enchaîné"
+msgstr "Rozplynout"
 
 msgid "IDS_MEDIABR_BODY_SUBTITLES"
-msgstr "Sous-titres"
+msgstr "Titulky"
 
 msgid "IDS_MEDIABR_BODY_5_SECONDS"
-msgstr "5 secondes"
+msgstr "5 sekund"
 
 msgid "IDS_MEDIABR_BODY_10_SECONDS"
-msgstr "10 secondes"
+msgstr "10 sekund"
 
 msgid "IDS_MEDIABR_BODY_20_SECONDS"
-msgstr "20 secondes"
+msgstr "20 sekund"
 
 msgid "IDS_MEDIABR_MBODY_IRIS_M_EFFECT"
-msgstr "Iris"
+msgstr "Duha"
 
 msgid "IDS_MEDIABR_BODY_ACTIVATION"
-msgstr "Activation"
+msgstr "Aktivace"
 

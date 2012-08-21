@@ -1,51 +1,51 @@
 msgid "IDS_MEDIABR_OPT_SLIDE_SHOW"
-msgstr "Diaporama"
+msgstr "Tampilan slide"
 
 msgid "IDS_MEDIABR_BODY_SLIDESHOW_INTERVAL"
-msgstr "Intervalle du diaporama"
+msgstr "Jeda tayangan slide"
 
 msgid "IDS_MEDIABR_OPT_SLIDE"
-msgstr "Défilement"
+msgstr "Slide"
 
 msgid "IDS_MEDIABR_OPT_2_SECONDS"
-msgstr "2 secondes"
+msgstr "2 detik"
 
 msgid "IDS_MEDIABR_OPT_3_SECONDS"
-msgstr "3 secondes"
+msgstr "3 detik"
 
 msgid "IDS_MEDIABR_BODY_SHUFFLE"
-msgstr "Mode aléatoire"
+msgstr "Acak"
 
 msgid "IDS_MEDIABR_BODY_REPEAT"
-msgstr "Répéter"
+msgstr "Mengulang"
 
 msgid "IDS_MEDIABR_BODY_TRANSITION_EFFECT"
-msgstr "Effet de transition"
+msgstr "Efek transisi"
 
 msgid "IDS_MEDIABR_BODY_FADE"
-msgstr "Fondu"
+msgstr "Berangsur"
 
 msgid "IDS_MEDIABR_BODY_BLIND"
-msgstr "Stores vénitiens"
+msgstr "Tirai"
 
 msgid "IDS_MEDIABR_BODY_DISSOLVE"
-msgstr "Fondu enchaîné"
+msgstr "Larut"
 
 msgid "IDS_MEDIABR_BODY_SUBTITLES"
-msgstr "Sous-titres"
+msgstr "Subtitel"
 
 msgid "IDS_MEDIABR_BODY_5_SECONDS"
-msgstr "5 secondes"
+msgstr "5 detik"
 
 msgid "IDS_MEDIABR_BODY_10_SECONDS"
-msgstr "10 secondes"
+msgstr "10 detik"
 
 msgid "IDS_MEDIABR_BODY_20_SECONDS"
-msgstr "20 secondes"
+msgstr "20 detik"
 
 msgid "IDS_MEDIABR_MBODY_IRIS_M_EFFECT"
 msgstr "Iris"
 
 msgid "IDS_MEDIABR_BODY_ACTIVATION"
-msgstr "Activation"
+msgstr "Pengaktifan"
 

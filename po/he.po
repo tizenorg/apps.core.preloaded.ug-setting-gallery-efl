@@ -1,51 +1,51 @@
 msgid "IDS_MEDIABR_OPT_SLIDE_SHOW"
-msgstr "Diaporama"
+msgstr "הצגת שקופיות"
 
 msgid "IDS_MEDIABR_BODY_SLIDESHOW_INTERVAL"
-msgstr "Intervalle du diaporama"
+msgstr "מרווח הצגת שקופיות"
 
 msgid "IDS_MEDIABR_OPT_SLIDE"
-msgstr "Défilement"
+msgstr "החלק"
 
 msgid "IDS_MEDIABR_OPT_2_SECONDS"
-msgstr "2 secondes"
+msgstr "2 שניות"
 
 msgid "IDS_MEDIABR_OPT_3_SECONDS"
-msgstr "3 secondes"
+msgstr "3 שניות"
 
 msgid "IDS_MEDIABR_BODY_SHUFFLE"
-msgstr "Mode aléatoire"
+msgstr "ערבב"
 
 msgid "IDS_MEDIABR_BODY_REPEAT"
-msgstr "Répéter"
+msgstr "חזור על"
 
 msgid "IDS_MEDIABR_BODY_TRANSITION_EFFECT"
-msgstr "Effet de transition"
+msgstr "אפקט מעבר"
 
 msgid "IDS_MEDIABR_BODY_FADE"
-msgstr "Fondu"
+msgstr "עמעום"
 
 msgid "IDS_MEDIABR_BODY_BLIND"
-msgstr "Stores vénitiens"
+msgstr "תריס"
 
 msgid "IDS_MEDIABR_BODY_DISSOLVE"
-msgstr "Fondu enchaîné"
+msgstr "מתפזר"
 
 msgid "IDS_MEDIABR_BODY_SUBTITLES"
-msgstr "Sous-titres"
+msgstr "כתוביות"
 
 msgid "IDS_MEDIABR_BODY_5_SECONDS"
-msgstr "5 secondes"
+msgstr "5 שניות"
 
 msgid "IDS_MEDIABR_BODY_10_SECONDS"
-msgstr "10 secondes"
+msgstr "10 שניות"
 
 msgid "IDS_MEDIABR_BODY_20_SECONDS"
-msgstr "20 secondes"
+msgstr "20 שניות"
 
 msgid "IDS_MEDIABR_MBODY_IRIS_M_EFFECT"
-msgstr "Iris"
+msgstr "קשתית"
 
 msgid "IDS_MEDIABR_BODY_ACTIVATION"
-msgstr "Activation"
+msgstr "הפעלה"
 

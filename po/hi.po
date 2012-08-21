@@ -1,51 +1,51 @@
 msgid "IDS_MEDIABR_OPT_SLIDE_SHOW"
-msgstr "Diaporama"
+msgstr "स्लाइड शो"
 
 msgid "IDS_MEDIABR_BODY_SLIDESHOW_INTERVAL"
-msgstr "Intervalle du diaporama"
+msgstr "स्लाइड शो अंतराल"
 
 msgid "IDS_MEDIABR_OPT_SLIDE"
-msgstr "Défilement"
+msgstr "स्लाइड"
 
 msgid "IDS_MEDIABR_OPT_2_SECONDS"
-msgstr "2 secondes"
+msgstr "2 सेकंड"
 
 msgid "IDS_MEDIABR_OPT_3_SECONDS"
-msgstr "3 secondes"
+msgstr "3 सेकंड"
 
 msgid "IDS_MEDIABR_BODY_SHUFFLE"
-msgstr "Mode aléatoire"
+msgstr "शफ़ल"
 
 msgid "IDS_MEDIABR_BODY_REPEAT"
-msgstr "Répéter"
+msgstr "दोहराव"
 
 msgid "IDS_MEDIABR_BODY_TRANSITION_EFFECT"
-msgstr "Effet de transition"
+msgstr "परिवर्तन प्रभाव"
 
 msgid "IDS_MEDIABR_BODY_FADE"
-msgstr "Fondu"
+msgstr "फीका"
 
 msgid "IDS_MEDIABR_BODY_BLIND"
-msgstr "Stores vénitiens"
+msgstr "ब्लाइंड"
 
 msgid "IDS_MEDIABR_BODY_DISSOLVE"
-msgstr "Fondu enchaîné"
+msgstr "विलय"
 
 msgid "IDS_MEDIABR_BODY_SUBTITLES"
-msgstr "Sous-titres"
+msgstr "उपशीर्षक"
 
 msgid "IDS_MEDIABR_BODY_5_SECONDS"
-msgstr "5 secondes"
+msgstr "5 सेकंड"
 
 msgid "IDS_MEDIABR_BODY_10_SECONDS"
-msgstr "10 secondes"
+msgstr "10 सेकंड"
 
 msgid "IDS_MEDIABR_BODY_20_SECONDS"
-msgstr "20 secondes"
+msgstr "20 सेकंड"
 
 msgid "IDS_MEDIABR_MBODY_IRIS_M_EFFECT"
-msgstr "Iris"
+msgstr "आइरिस"
 
 msgid "IDS_MEDIABR_BODY_ACTIVATION"
-msgstr "Activation"
+msgstr "सक्रियण"
 

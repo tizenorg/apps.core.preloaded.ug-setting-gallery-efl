@@ -1,18 +1,18 @@
 /*
-  * Copyright 2012  Samsung Electronics Co., Ltd
-  *
-  * Licensed under the Flora License, Version 1.0 (the "License");
-  * you may not use this file except in compliance with the License.
-  * You may obtain a copy of the License at
-  *
-  *	http://www.tizenopensource.org/license
-  *
-  * Unless required by applicable law or agreed to in writing, software
-  * distributed under the License is distributed on an "AS IS" BASIS,
-  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  * See the License for the specific language governing permissions and
-  * limitations under the License.
-  */
+ * Copyright 2012  Samsung Electronics Co., Ltd
+ *
+ * Licensed under the Flora License, Version 1.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *	  http://www.tizenopensource.org/license
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
 #include <vconf.h>
 
@@ -23,12 +23,9 @@
 #define POPUP_TIMEOUT 3
 
 static void
-_gallery_key_text_popuptimeout_cb( void *data, Evas_Object *obj, void *event_info )
+_gallery_key_text_popupresponse_cb( void *data, Evas_Object *obj, void *event_info )
 {
-	if(!data)
-	{
-		return;
-	}
+	gallery_retm_if(!data, "data is NULL");
 
 	struct ug_data * ugd = (struct ug_data *)data;
 
@@ -42,10 +39,7 @@ _gallery_key_text_popuptimeout_cb( void *data, Evas_Object *obj, void *event_inf
 void
 gallery_key_text_popup(void *data, char *msg)
 {
-	if(!data)
-	{
-		return;
-	}
+	gallery_retm_if(!data, "data is NULL");
 
 	struct ug_data * ugd = (struct ug_data *)data;
 
@@ -57,8 +51,9 @@ gallery_key_text_popup(void *data, char *msg)
 		evas_object_size_hint_weight_set(popup, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
 
 		elm_object_text_set(popup, msg);
+//		elm_popup_mode_set(popup, ELM_POPUP_TYPE_ALERT);
 		elm_popup_timeout_set(popup, POPUP_TIMEOUT);
-		evas_object_smart_callback_add(popup, "timeout", _gallery_key_text_popuptimeout_cb, data);
+		evas_object_smart_callback_add(popup, "response", _gallery_key_text_popupresponse_cb, data);
 		evas_object_show(popup);
 	}
 }
@@ -69,13 +64,7 @@ gallery_key_init_current_time(double *val)
 	if(vconf_get_dbl(VCONFKEY_GALLERY_INTERVAL_TIME, val))
 	{
 		if(vconf_set_dbl(VCONFKEY_GALLERY_INTERVAL_TIME, DEFAULT_TIMER))
-		{
 			return -1;
-		}
-		else
-		{
-			return 0;
-		}
 	}
 
 	return 0;
@@ -87,13 +76,7 @@ gallery_key_init_repeat_state(int *b_val)
 	if(vconf_get_bool(VCONFKEY_GALLERY_REPEAT_STATE, b_val))
 	{
 		if(vconf_set_bool(VCONFKEY_GALLERY_REPEAT_STATE, DEFAULT_REPEAT))
-		{
 			return -1;
-		}
-		else
-		{
-			return 0;
-		}
 	}
 
 	return 0;
@@ -105,49 +88,7 @@ gallery_key_init_shuffle_state(int *b_val)
 	if(vconf_get_bool(VCONFKEY_GALLERY_SHUFFLE_STATE, b_val))
 	{
 		if(vconf_set_bool(VCONFKEY_GALLERY_SHUFFLE_STATE, DEFAULT_SHUFFLE))
-		{
 			return -1;
-		}
-		else
-		{
-			return 0;
-		}
-	}
-
-	return 0;
-}
-
-int
-gallery_key_init_subtitle_state(int *b_val)
-{
-	if(vconf_get_bool(VCONFKEY_GALLERY_SUBTITLE_STATE, b_val))
-	{
-		if(vconf_set_bool(VCONFKEY_GALLERY_SUBTITLE_STATE, DEFAULT_SUBTITLE))
-		{
-			return -1;
-		}
-		else
-		{
-			return 0;
-		}
-	}
-
-	return 0;
-}
-
-int
-gallery_key_init_slideshow_effect(void)
-{
-	if(!vconf_get_str(VCONFKEY_GALLERY_TRANSITION_EFFECT))
-	{
-		if(vconf_set_str(VCONFKEY_GALLERY_TRANSITION_EFFECT, DEFAULT_EFFECT))
-		{
-			return -1;
-		}
-		else
-		{
-			return 0;
-		}
 	}
 
 	return 0;
@@ -156,36 +97,39 @@ gallery_key_init_slideshow_effect(void)
 double
 gallery_key_get_time_vconf_value(int index)
 {
+	double value = 0.0;
+
 	switch(index)
 	{
 		case 0:
-			return VCONFKEY_GALLERY_ITV_TIME_2S;
+			value = VCONFKEY_GALLERY_ITV_TIME_2S;
 			break;
 
 		case 1:
-			return VCONFKEY_GALLERY_ITV_TIME_3S;
+			value = VCONFKEY_GALLERY_ITV_TIME_3S;
 			break;
 
 		case 2:
-			return VCONFKEY_GALLERY_ITV_TIME_5S;
+			value = VCONFKEY_GALLERY_ITV_TIME_5S;
 			break;
 
 		case 3:
-			return VCONFKEY_GALLERY_ITV_TIME_10S;
+			value = VCONFKEY_GALLERY_ITV_TIME_10S;
 			break;
 
 		case 4:
-			return VCONFKEY_GALLERY_ITV_TIME_20S;
+			value = VCONFKEY_GALLERY_ITV_TIME_20S;
 			break;
 
 		default:
-			return 0;
+			break;
 	}
 
+	return value;
 }
 
 char *
-gallery_key_menu_get(int index)
+gallery_key_time_menu_get(int index)
 {
 	char *text = NULL;
 
@@ -220,10 +164,11 @@ gallery_key_menu_get(int index)
 
 }
 
+
 int
-gallery_key_reset_current_time(void)
+gallery_key_set_current_time(double value)
 {
-	if(vconf_set_dbl(VCONFKEY_GALLERY_INTERVAL_TIME, DEFAULT_TIMER))
+	if(vconf_set_dbl(VCONFKEY_GALLERY_INTERVAL_TIME, value))
 	{
 		gallery_error("vconf_set_dbl:interval time failed");
 		return -1;
@@ -233,9 +178,9 @@ gallery_key_reset_current_time(void)
 }
 
 int
-gallery_key_reset_repeat_state(void)
+gallery_key_set_repeat_state(bool value)
 {
-	if(vconf_set_bool(VCONFKEY_GALLERY_REPEAT_STATE, DEFAULT_REPEAT))
+	if(vconf_set_bool(VCONFKEY_GALLERY_REPEAT_STATE, value))
 	{
 		gallery_error("vconf_set_bool:repeat state failed");
 		return -1;
@@ -245,9 +190,9 @@ gallery_key_reset_repeat_state(void)
 }
 
 int
-gallery_key_reset_shuffle_state(void)
+gallery_key_set_shuffle_state(bool value)
 {
-	if(vconf_set_bool(VCONFKEY_GALLERY_SHUFFLE_STATE, DEFAULT_SHUFFLE))
+	if(vconf_set_bool(VCONFKEY_GALLERY_SHUFFLE_STATE, value))
 	{
 		gallery_error("vconf_set_bool:shuffle state failed");
 		return -1;
@@ -256,26 +201,3 @@ gallery_key_reset_shuffle_state(void)
 	return 0;
 }
 
-int
-gallery_key_reset_subtitle_state(void)
-{
-	if(vconf_set_bool(VCONFKEY_GALLERY_SUBTITLE_STATE, DEFAULT_SUBTITLE))
-	{
-		gallery_error("vconf_set_bool:subtitle state failed");
-		return -1;
-	}
-
-	return 0;
-}
-
-int
-gallery_key_reset_slideshow_effect(void)
-{
-	if(vconf_set_str(VCONFKEY_GALLERY_TRANSITION_EFFECT, DEFAULT_EFFECT))
-	{
-		gallery_error("vconf_set_str:transition effect failed");
-		return -1;
-	}
-
-	return 0;
-}

@@ -7,6 +7,10 @@ PROJECT(ug-setting-gallery-efl C)
 #SET(INCLUDEDIR "\${prefix}/include")
 #SET(VERSION 0.1.0)
 
+IF("${ARCH}" STREQUAL "arm")
+	ADD_DEFINITIONS("-DTARGET")
+ENDIF("${ARCH}" STREQUAL "arm")
+
 SET(SRCS
 	src/ug-setting-gallery.c
 	src/sg-keys.c
@@ -17,7 +21,7 @@ INCLUDE_DIRECTORIES(
 )
 
 INCLUDE(FindPkgConfig)
-pkg_check_modules(pkgs REQUIRED elementary ui-gadget dlog vconf bundle)
+pkg_check_modules(pkgs REQUIRED elementary ui-gadget-1 dlog vconf)
 
 FOREACH(flag ${pkgs_CFLAGS})
 	SET(EXTRA_CXXFLAGS "${EXTRA_CXXFLAGS} ${flag}")
@@ -25,7 +29,7 @@ ENDFOREACH(flag)
 
 SET(EXTRA_CXXFLAGS "${EXTRA_CXXFLAGS} -fvisibility=hidden -Wall")
 SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${EXTRA_CXXFLAGS}")
-SET(CMAKE_C_FLAGS ${CMAKE_CXX_FLAGS})
+SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${EXTRA_CXXFLAGS}")
 
 ADD_DEFINITIONS("-DPREFIX=\"${CMAKE_INSTALL_PREFIX}\"")
 

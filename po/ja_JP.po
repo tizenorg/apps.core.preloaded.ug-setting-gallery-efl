@@ -2,7 +2,10 @@ msgid "IDS_MEDIABR_OPT_SLIDE_SHOW"
 msgstr "スライドショー"
 
 msgid "IDS_MEDIABR_BODY_SLIDESHOW_INTERVAL"
-msgstr "スライドショーの​間隔"
+msgstr "スライド​ショー​の​間隔"
+
+msgid "IDS_MEDIABR_OPT_SLIDE"
+msgstr "スライド"
 
 msgid "IDS_MEDIABR_OPT_2_SECONDS"
 msgstr "2秒"
@@ -16,8 +19,20 @@ msgstr "シャッフル"
 msgid "IDS_MEDIABR_BODY_REPEAT"
 msgstr "繰り返し"
 
+msgid "IDS_MEDIABR_BODY_TRANSITION_EFFECT"
+msgstr "通過​効果"
+
+msgid "IDS_MEDIABR_BODY_FADE"
+msgstr "フェード"
+
+msgid "IDS_MEDIABR_BODY_BLIND"
+msgstr "ブラインド"
+
+msgid "IDS_MEDIABR_BODY_DISSOLVE"
+msgstr "ディゾルブ"
+
 msgid "IDS_MEDIABR_BODY_SUBTITLES"
-msgstr "サブタイトル"
+msgstr "字幕"
 
 msgid "IDS_MEDIABR_BODY_5_SECONDS"
 msgstr "5秒"
@@ -27,4 +42,10 @@ msgstr "10秒"
 
 msgid "IDS_MEDIABR_BODY_20_SECONDS"
 msgstr "20秒"
+
+msgid "IDS_MEDIABR_MBODY_IRIS_M_EFFECT"
+msgstr "アイリス"
+
+msgid "IDS_MEDIABR_BODY_ACTIVATION"
+msgstr "アクティベーション"
 

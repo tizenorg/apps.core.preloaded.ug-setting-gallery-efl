@@ -4,6 +4,9 @@ msgstr "슬라이드쇼"
 msgid "IDS_MEDIABR_BODY_SLIDESHOW_INTERVAL"
 msgstr "슬라이드쇼 전환 간격"
 
+msgid "IDS_MEDIABR_OPT_SLIDE"
+msgstr "슬라이드"
+
 msgid "IDS_MEDIABR_OPT_2_SECONDS"
 msgstr "2초"
 
@@ -16,6 +19,18 @@ msgstr "셔플"
 msgid "IDS_MEDIABR_BODY_REPEAT"
 msgstr "반복"
 
+msgid "IDS_MEDIABR_BODY_TRANSITION_EFFECT"
+msgstr "전환 효과"
+
+msgid "IDS_MEDIABR_BODY_FADE"
+msgstr "페이드"
+
+msgid "IDS_MEDIABR_BODY_BLIND"
+msgstr "블라인드"
+
+msgid "IDS_MEDIABR_BODY_DISSOLVE"
+msgstr "디졸브"
+
 msgid "IDS_MEDIABR_BODY_SUBTITLES"
 msgstr "자막"
 
@@ -27,4 +42,10 @@ msgstr "10초"
 
 msgid "IDS_MEDIABR_BODY_20_SECONDS"
 msgstr "20초"
+
+msgid "IDS_MEDIABR_MBODY_IRIS_M_EFFECT"
+msgstr "아이리스"
+
+msgid "IDS_MEDIABR_BODY_ACTIVATION"
+msgstr "실행"
 

@@ -43,3 +43,9 @@ msgstr "10 seconden"
 msgid "IDS_MEDIABR_BODY_20_SECONDS"
 msgstr "20 seconden"
 
+msgid "IDS_MEDIABR_MBODY_IRIS_M_EFFECT"
+msgstr "Iris"
+
+msgid "IDS_MEDIABR_BODY_ACTIVATION"
+msgstr "Inschakelen"
+

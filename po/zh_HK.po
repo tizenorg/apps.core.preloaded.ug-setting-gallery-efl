@@ -2,7 +2,10 @@ msgid "IDS_MEDIABR_OPT_SLIDE_SHOW"
 msgstr "投影片播放"
 
 msgid "IDS_MEDIABR_BODY_SLIDESHOW_INTERVAL"
-msgstr "投影片播放間隔"
+msgstr "投影片間隔"
+
+msgid "IDS_MEDIABR_OPT_SLIDE"
+msgstr "滑動"
 
 msgid "IDS_MEDIABR_OPT_2_SECONDS"
 msgstr "2 秒"
@@ -16,6 +19,18 @@ msgstr "隨機播放"
 msgid "IDS_MEDIABR_BODY_REPEAT"
 msgstr "重複"
 
+msgid "IDS_MEDIABR_BODY_TRANSITION_EFFECT"
+msgstr "過場效果"
+
+msgid "IDS_MEDIABR_BODY_FADE"
+msgstr "褪色"
+
+msgid "IDS_MEDIABR_BODY_BLIND"
+msgstr "百葉窗"
+
+msgid "IDS_MEDIABR_BODY_DISSOLVE"
+msgstr "融化"
+
 msgid "IDS_MEDIABR_BODY_SUBTITLES"
 msgstr "字幕"
 
@@ -27,4 +42,10 @@ msgstr "10 秒"
 
 msgid "IDS_MEDIABR_BODY_20_SECONDS"
 msgstr "20 秒"
+
+msgid "IDS_MEDIABR_MBODY_IRIS_M_EFFECT"
+msgstr "光圈"
+
+msgid "IDS_MEDIABR_BODY_ACTIVATION"
+msgstr "啟動"
 

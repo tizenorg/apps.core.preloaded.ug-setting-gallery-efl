@@ -1,18 +1,18 @@
 /*
-  * Copyright 2012  Samsung Electronics Co., Ltd
-  *
-  * Licensed under the Flora License, Version 1.0 (the "License");
-  * you may not use this file except in compliance with the License.
-  * You may obtain a copy of the License at
-  *
-  *	http://www.tizenopensource.org/license
-  *
-  * Unless required by applicable law or agreed to in writing, software
-  * distributed under the License is distributed on an "AS IS" BASIS,
-  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  * See the License for the specific language governing permissions and
-  * limitations under the License.
-  */
+ * Copyright 2012  Samsung Electronics Co., Ltd
+ *
+ * Licensed under the Flora License, Version 1.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *	  http://www.tizenopensource.org/license
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
 #ifndef UG_MODULE_API
 #define UG_MODULE_API __attribute__ ((visibility("default")))
@@ -23,21 +23,22 @@
 #include <stdbool.h>
 
 #include <Elementary.h>
-#include <bundle.h>
 #include <ui-gadget-module.h>
 #include <vconf.h>
 
 
-#include "ui-gadget.h"
 #include "sg-keys.h"
 #include "sg-debug.h"
 #include "ug-setting-gallery.h"
 
+#define MAX_PRECISION	0.1
+
+typedef int (*Init_State_Func) (int *data);
 
 static void
 _gallery_quit_cb(void *data, Evas_Object *obj, void *event_info)
 {
-	gallery_ret_if( data == NULL);
+	gallery_ret_if(!data);
 
 	struct ug_data *ugd;
 	ugd = (struct ug_data *)data;
@@ -48,95 +49,78 @@ _gallery_quit_cb(void *data, Evas_Object *obj, void *event_info)
 	}
 }
 
-static double
-_gallery_get_fabs(double vconf_value1, double vconf_value2)
+static char *_gallery_get_menu_elm_text(int param)
 {
-	double temp = 0;
-	temp = vconf_value1 - vconf_value2;
-	if(temp < 0)
+	char *text = NULL;
+
+	switch(param)
 	{
-		return  vconf_value2 - vconf_value1 ;
+		case GALLERY_MAIN_MENU_TIME:
+			text = SGUG_TR_PESF;
+			break;
+
+		case GALLERY_MAIN_MENU_REPEAT:
+			text = SGUG_TR_REPEAT;
+			break;
+
+		case GALLERY_MAIN_MENU_SHUFFLE:
+			text = SGUG_TR_SHUFFLE;
+			break;
+
+		case GALLERY_MAIN_MENU_TITLE:
+			text = SGUG_TR_SLIDESHOW;
+			break;
+
+		default:
+			break;
 	}
 
-	return temp;
+	return text;
+}
+
+static int _gallery_get_time_radio_value(void)
+{
+	int radio_value = 0;
+	double time_value = 0;
+
+	gallery_key_init_current_time(&time_value);
+
+	for(radio_value = 0; radio_value < GALLERY_SUB_TIME_COUNT; radio_value++)
+	{
+		if(abs(time_value - gallery_key_get_time_vconf_value(radio_value)) < MAX_PRECISION)
+			break;
+	}
+
+	return radio_value;
+}
+
+static char *_gallery_get_menu_time_text(void)
+{
+	int radio_value = 0;
+	radio_value =_gallery_get_time_radio_value();
+
+	return gallery_key_time_menu_get(radio_value);
+}
+
+static char *_gallery_get_menu_sub_elm_text(int param)
+{
+	char *text = NULL;
+
+	switch(param)
+	{
+		case GALLERY_MAIN_MENU_TIME:
+			text = _gallery_get_menu_time_text();
+			break;
+
+		default:
+			break;
+	}
+
+	return text;
 }
 
 static char *
 _gallery_genlist_text_get(void *data, Evas_Object *obj, const char *part)
-{
-	gallery_retv_if( part == NULL, NULL);
-
-	int param = (int )data;
-
-	char *txt = NULL;
-	double time_value = 0;
-	int input_len = 0;
-	input_len = strlen(part);
-
-	if (input_len == strlen("elm.text.1") && strncmp(part, "elm.text.1", input_len) == 0 )
-	{
-		if(param == GALLERY_MAIN_MENU_TIME)
-		{
-			txt = SGUG_TR_PESF;
-		}
-	}
-	// get sub item of interval-timer
-	else if (input_len == strlen("elm.text.2") && strncmp(part, "elm.text.2", input_len) == 0 )
-	{
-		if(param == GALLERY_MAIN_MENU_TIME)
-		{
-			gallery_key_init_current_time(&time_value);
-
-			int radio_value =0;
-			for(radio_value =0;radio_value < GALLERY_SUB_TIME_COUNT; radio_value++)
-			{
-				if(_gallery_get_fabs(time_value, gallery_key_get_time_vconf_value(radio_value))<0.1)
-				{
-					break;
-				}
-			}
-			if(radio_value >= 0)
-			{
-				txt = gallery_key_menu_get(radio_value);
-			}
-		}
-	}
-	else if (input_len == strlen("elm.text") && strncmp(part, "elm.text", input_len) == 0 )
-	{
-		if(param == GALLERY_MAIN_MENU_REPEAT)
-		{
-			txt = SGUG_TR_REPEAT;
-		}
-		else if(param == GALLERY_MAIN_MENU_SHUFFLE)
-		{
-			txt = SGUG_TR_SHUFFLE;
-		}
-		else if(param == GALLERY_MAIN_MENU_TITLE)
-		{
-			txt = SGUG_TR_SLIDESHOW;
-		}
-		else if(param == GALLERY_MAIN_MENU_SUBTITLE_TITLE)
-		{
-			txt = SGUG_TR_SUBTITLE_TITLE;
-		}
-		else if(param == GALLERY_MAIN_MENU_SUBTITLE_ON_OFF)
-		{
-			txt = SGUG_TR_SUBTITLE;
-		}
-	}
-
-	if(txt)
-	{
-		return strdup(txt);
-	}
-	else
-	{
-		return NULL;
-	}
-}
-
-static char *
-_gallery_time_text_get(void *data, Evas_Object *obj, const char *part)
 {
 	gallery_retv_if(!part, NULL);
 
@@ -144,19 +128,82 @@ _gallery_time_text_get(void *data, Evas_Object *obj, const char *part)
 
 	char *txt = NULL;
 	int input_len = 0;
+	input_len = strlen(part);
+
+	if (input_len == strlen("elm.text.1") && strncmp(part, "elm.text.1", input_len) == 0 )
+	{
+		txt = _gallery_get_menu_elm_text(param);
+	}
+	else if (input_len == strlen("elm.text.2") && strncmp(part, "elm.text.2", input_len) == 0 )
+	{
+		txt = _gallery_get_menu_sub_elm_text(param);
+	}
+	else if (input_len == strlen("elm.text") && strncmp(part, "elm.text", input_len) == 0 )
+	{
+		txt = _gallery_get_menu_elm_text(param);
+	}
+
+	if(txt)
+		return strdup(txt);
+	else
+		return NULL;
+}
+
+static char *
+_gallery_expand_common_text_get(const char *part, void *data, gallery_main_menu_item_t mitem)
+{
+	gallery_retv_if(!part, NULL);
+
+	int param = (int )data;
+	char *txt = NULL;
+	int input_len = 0;
 
 	input_len = strlen(part);
 
 	if (input_len == strlen("elm.text") && strncmp(part, "elm.text", input_len) == 0 )
 	{
-		if(param>=0 && param <GALLERY_SUB_TIME_COUNT)
+		switch(mitem)
 		{
-			txt = gallery_key_menu_get(param);
+			case GALLERY_MAIN_MENU_TIME:
+				txt = gallery_key_time_menu_get(param);
+				break;
+
+			default:
+				break;
 		}
+
 		if(txt)
-		{
 			return strdup(txt);
-		}
+	}
+
+	return NULL;
+}
+
+static char *
+_gallery_time_text_get(void *data, Evas_Object *obj, const char *part)
+{
+	gallery_retv_if(!part, NULL);
+
+	return _gallery_expand_common_text_get(part, data, GALLERY_MAIN_MENU_TIME);
+}
+
+
+static Evas_Object*
+_gallery_expand_common_icon_get(Evas_Object *obj, const char *part, int param, int radio_value, Evas_Object *radio_group)
+{
+	gallery_retv_if(!part, NULL);
+	gallery_retv_if(!obj, NULL);
+
+	if (strncmp(part, "elm.icon", strlen(part)) == 0 )
+	{
+		Evas_Object *radio_btn = elm_radio_add(obj);
+		evas_object_propagate_events_set(radio_btn, EINA_TRUE);
+		elm_radio_state_value_set(radio_btn, param);
+		elm_radio_group_add(radio_btn, radio_group);
+		elm_radio_value_set(radio_group, radio_value);
+		evas_object_show(radio_btn);
+
+		return radio_btn;
 	}
 
 	return NULL;
@@ -167,52 +214,20 @@ _gallery_time_content_get(void *data, Evas_Object *obj, const char *part)
 {
 	gallery_retv_if(!part, NULL);
 
-	int param = (int )data;
-
 	struct ug_data *ugd = evas_object_data_get(obj, "ugd");
 	gallery_retvm_if(!ugd, NULL, "INVALID param");
 
 	int radio_value = 0;
+	radio_value = _gallery_get_time_radio_value();
 
-	if (strncmp(part, "elm.icon", strlen(part)) == 0 )
-	{
-		double time_value = 0;
-
-		Evas_Object *radio_btn = elm_radio_add(obj);
-		evas_object_propagate_events_set(radio_btn, EINA_TRUE);
-
-		elm_radio_state_value_set(radio_btn, param);
-		elm_radio_group_add(radio_btn, ugd->radio_group);
-
-		gallery_key_init_current_time(&time_value);
-
-		for(radio_value =0;radio_value <GALLERY_SUB_TIME_COUNT; radio_value++)
-		{
-			if(_gallery_get_fabs(time_value, gallery_key_get_time_vconf_value(radio_value))<0.1)
-			{
-				break;
-			}
-		}
-
-		if(ugd->radio_group)
-		{
-			elm_radio_value_set(ugd->radio_group, radio_value);
-		}
-
-		evas_object_smart_callback_add(radio_btn, "changed", NULL, NULL);//gallery_key_set_time_vconf
-		evas_object_show(radio_btn);
-
-		return radio_btn;
-	}
-
-	return NULL;
+	return _gallery_expand_common_icon_get(obj, part, (int )data, radio_value, ugd->radio_group);
 }
 
 static void
 _gallery_genlist_icon_cb(void *data,  Evas_Object *obj, void *event_info)
 {
-	gallery_ret_if(NULL == data);
-	struct ug_data *ugd = (struct ug_data *)data;
+	gallery_ret_if(!data);
+	struct ug_data *ugd = evas_object_data_get(obj, "ugd");
 
 	int state = 0;
 	int index = (int )data;
@@ -221,7 +236,7 @@ _gallery_genlist_icon_cb(void *data,  Evas_Object *obj, void *event_info)
 	{
 		gallery_key_init_repeat_state(&state);
 
-		if (vconf_set_bool(VCONFKEY_GALLERY_REPEAT_STATE, !state))
+		if (gallery_key_set_repeat_state(!state))
 		{
 			gallery_key_text_popup(ugd,SGUG_TR_FAILED);
 		}
@@ -230,28 +245,39 @@ _gallery_genlist_icon_cb(void *data,  Evas_Object *obj, void *event_info)
 	{
 		gallery_key_init_shuffle_state(&state);
 
-		if(vconf_set_bool(VCONFKEY_GALLERY_SHUFFLE_STATE, !state))
+		if(gallery_key_set_shuffle_state(!state))
 		{
 			gallery_key_text_popup(ugd,SGUG_TR_FAILED);
 		}
 	}
-	else if(index == GALLERY_MAIN_MENU_SUBTITLE_ON_OFF)
-	{
-		gallery_key_init_subtitle_state(&state);
 
-		if(vconf_set_bool(VCONFKEY_GALLERY_SUBTITLE_STATE, !state))
-		{
-			gallery_key_text_popup(ugd, SGUG_TR_FAILED);
-		}
-	}
+}
+
+static Evas_Object *_gallery_create_check(Evas_Object *obj, struct ug_data *ugd, int index, Init_State_Func func, int *state)
+{
+	gallery_retvm_if(!obj, NULL, "obj is NULL");
+	gallery_retvm_if(!ugd, NULL, "ugd is NULL");
+	gallery_retvm_if(!state, NULL, "state is NULL");
+
+	if(func && state)
+		func(state);
+
+	Evas_Object *check = NULL;
+	check  = elm_check_add(obj);
+	evas_object_data_set(check, "ugd", ugd);
+	elm_check_state_set( check, (bool)*state);
+	elm_object_style_set(check, "on&off");
+	evas_object_propagate_events_set(check, EINA_FALSE);
+	evas_object_smart_callback_add(check, "changed", _gallery_genlist_icon_cb, (void *)index);
+
+	return check;
 }
 
 static Evas_Object*
-_gallery_genlist_content_get(void *data, Evas_Object *obj, const char *part)
+_gallery_genlist_icon_get(void *data, Evas_Object *obj, const char *part)
 {
-
-	gallery_retv_if(NULL == data , NULL);
-	gallery_retv_if(NULL == part, NULL);
+	gallery_retv_if(!data, NULL);
+	gallery_retv_if(!part, NULL);
 
 	struct ug_data *ugd = NULL;
 
@@ -259,71 +285,29 @@ _gallery_genlist_content_get(void *data, Evas_Object *obj, const char *part)
 	gallery_retvm_if(!ugd, NULL, "INVALID param");
 
 	int index = (int )data;
+	Evas_Object *check = NULL;
 
-	if (0 == strncmp(part, "elm.icon", strlen(part)))
+	if (strncmp(part, "elm.icon", strlen(part)) == 0)
 	{
 		if (index == GALLERY_MAIN_MENU_REPEAT)
 		{
-			Evas_Object *check;
-			check  = elm_check_add(obj);
-
-			ugd->repeat_btn= check;
-
-			gallery_key_init_repeat_state(&ugd->repeat_state);
-			elm_check_state_set( ugd->repeat_btn, (bool)ugd->repeat_state);
-
-			elm_object_style_set(check, "on&off");
-
-			evas_object_propagate_events_set(check, EINA_FALSE);
-			evas_object_smart_callback_add(check, "changed", _gallery_genlist_icon_cb, (void *)index);
-
-			return ugd->repeat_btn;
-
+			check = _gallery_create_check(obj, ugd, index, gallery_key_init_repeat_state, &ugd->repeat_state);
+			ugd->repeat_btn = check;
 		}
 		else if(index == GALLERY_MAIN_MENU_SHUFFLE)
 		{
-			Evas_Object *check;
-			check  = elm_check_add(obj);
-
-			ugd->shuffle_btn= check;
-
-			gallery_key_init_shuffle_state(&ugd->shuffle_state);
-			elm_check_state_set( ugd->shuffle_btn, (bool)ugd->shuffle_state);
-
-			elm_object_style_set(check, "on&off");
-
-			evas_object_propagate_events_set(check, EINA_FALSE);
-			evas_object_smart_callback_add(check, "changed", _gallery_genlist_icon_cb, (void *)index);
-
-			return ugd->shuffle_btn;
+			check = _gallery_create_check(obj, ugd, index, gallery_key_init_shuffle_state, &ugd->shuffle_state);
+			ugd->shuffle_btn = check;
 		}
-		else if(index == GALLERY_MAIN_MENU_SUBTITLE_ON_OFF)
-		{
-			Evas_Object *check;
-			check  = elm_check_add(obj);
 
-			ugd->subtitle_btn= check;
-
-			gallery_key_init_subtitle_state(&ugd->subtitle_state);
-			elm_check_state_set( ugd->subtitle_btn, (bool)ugd->subtitle_state);
-
-			elm_object_style_set(check, "on&off");
-
-			evas_object_propagate_events_set(check, EINA_FALSE);
-			evas_object_smart_callback_add(check, "changed", _gallery_genlist_icon_cb, (void *)index);
-
-			return ugd->subtitle_btn;
-		}
 	}
 
-	return NULL;
-
-	}
+	return check;
+}
 
 static void
 _gallery_time_select_cb(void *data, Evas_Object *obj, void *event_info)
 {
-
 	struct ug_data *ugd = evas_object_data_get(obj, "ugd");
 	gallery_ret_if(!ugd);
 
@@ -334,7 +318,7 @@ _gallery_time_select_cb(void *data, Evas_Object *obj, void *event_info)
 
 	elm_genlist_item_selected_set(item, EINA_FALSE);
 
-	if(vconf_set_dbl(VCONFKEY_GALLERY_INTERVAL_TIME, gallery_key_get_time_vconf_value(param)))
+	if(gallery_key_set_current_time(gallery_key_get_time_vconf_value(param)))
 	{
 		gallery_key_text_popup(ugd,SGUG_TR_FAILED);
 	}
@@ -344,12 +328,10 @@ _gallery_time_select_cb(void *data, Evas_Object *obj, void *event_info)
 
 }
 
-
-
 static void
 _gallery_genlist_con(void *data, Evas_Object *obj, void *event_info)
 {
-	gallery_ret_if( event_info == NULL);
+	gallery_ret_if(!event_info);
 
 	Elm_Object_Item *item = event_info;
 	elm_genlist_item_subitems_clear(item);
@@ -359,7 +341,7 @@ static void
 _gallery_genlist_time_select_cb(void *data, Evas_Object *obj, void *event_info)
 {
 	struct ug_data *ugd = evas_object_data_get(obj, "ugd");
-	gallery_ret_if(ugd == NULL);
+	gallery_ret_if(!ugd);
 
 	int index = 0;
 	Elm_Object_Item *item = (Elm_Object_Item *)event_info;
@@ -375,7 +357,7 @@ _gallery_genlist_time_select_cb(void *data, Evas_Object *obj, void *event_info)
 	ugd->check_time_itc.func.del = NULL;
 
 	ugd->radio_group = elm_radio_add(gl);
-	for (index = 0; gallery_key_menu_get(index); index++)
+	for (index = 0; gallery_key_time_menu_get(index); index++)
 	{
 		elm_genlist_item_append(gl,&ugd->check_time_itc, (void *)index, item,
 				ELM_GENLIST_ITEM_NONE, _gallery_time_select_cb,  (void *)index);
@@ -386,10 +368,10 @@ _gallery_genlist_time_select_cb(void *data, Evas_Object *obj, void *event_info)
 static void
 _gallery_genlist_exp(void *data, Evas_Object *obj, void *event_info)
 {
-	gallery_ret_if( NULL == obj);
+	gallery_ret_if(!obj);
 
 	struct ug_data *ugd = evas_object_data_get(obj, "ugd");
-	gallery_ret_if(NULL == ugd);
+	gallery_ret_if(!ugd);
 
 	Elm_Object_Item *item = (Elm_Object_Item *)event_info;
 
@@ -398,7 +380,6 @@ _gallery_genlist_exp(void *data, Evas_Object *obj, void *event_info)
 	if(item == ugd->gl_it[GALLERY_MAIN_MENU_TIME])
 	{
 		_gallery_genlist_time_select_cb(data, obj, event_info);
-
 	}
 }
 
@@ -406,7 +387,7 @@ static void
 _gallery_genlist_select_cb(void *data, Evas_Object *obj, void *event_info)
 {
 	struct ug_data *ugd = evas_object_data_get(obj, "ugd");
-	gallery_ret_if(ugd == NULL);
+	gallery_ret_if(!ugd);
 
 	int param = (int )data;
 
@@ -420,25 +401,16 @@ _gallery_genlist_select_cb(void *data, Evas_Object *obj, void *event_info)
 	if(param == GALLERY_MAIN_MENU_TIME)
 	{
 		expand_state = elm_genlist_item_expanded_get(item);
-
-		if(!expand_state)
-		{
-			elm_genlist_item_expanded_set(item,EINA_TRUE);
-		}
-		else
-		{
-			elm_genlist_item_expanded_set(item,EINA_FALSE);
-		}
+		elm_genlist_item_expanded_set(item, !expand_state);
 	}
 	else if(param == GALLERY_MAIN_MENU_REPEAT)
 	{
 		gallery_key_init_repeat_state(&icon_state);
 		icon_state = !icon_state;
 
-		if(vconf_set_bool(VCONFKEY_GALLERY_REPEAT_STATE, icon_state))
+		if(gallery_key_set_repeat_state(icon_state))
 		{
 			gallery_key_text_popup(ugd,SGUG_TR_FAILED);
-
 		}
 
 		elm_check_state_set(ugd->repeat_btn, (bool)icon_state);
@@ -448,27 +420,12 @@ _gallery_genlist_select_cb(void *data, Evas_Object *obj, void *event_info)
 		gallery_key_init_shuffle_state(&icon_state);
 		icon_state = !icon_state;
 
-		if(vconf_set_bool(VCONFKEY_GALLERY_SHUFFLE_STATE, icon_state))
+		if(gallery_key_set_shuffle_state(icon_state))
 		{
 			gallery_key_text_popup(ugd,SGUG_TR_FAILED);
-
 		}
 
 		elm_check_state_set(ugd->shuffle_btn,(bool)icon_state);
-	}
-	else if(param == GALLERY_MAIN_MENU_SUBTITLE_ON_OFF)
-	{
-		gallery_key_init_subtitle_state(&icon_state);
-		icon_state = !icon_state;
-
-		if(vconf_set_bool(VCONFKEY_GALLERY_SUBTITLE_STATE, icon_state))
-		{
-			gallery_key_text_popup(ugd,SGUG_TR_FAILED);
-			return;
-
-		}
-
-		elm_check_state_set(ugd->subtitle_btn,(bool)icon_state);
 	}
 }
 
@@ -476,11 +433,13 @@ static Evas_Object *
 _gallery_genlist_items_add (Evas_Object *parent, struct ug_data *ugd)
 {
 	Evas_Object *main_genlist;
-	Elm_Object_Item *it = NULL;
+	Elm_Object_Item *sep;
 
 	int index = 0;
 
 	main_genlist = elm_genlist_add(parent);
+
+	elm_object_style_set(main_genlist, "dialogue");
 
 	evas_object_size_hint_weight_set(main_genlist, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
 	evas_object_size_hint_align_set(main_genlist, EVAS_HINT_FILL, EVAS_HINT_FILL);
@@ -501,9 +460,24 @@ _gallery_genlist_items_add (Evas_Object *parent, struct ug_data *ugd)
 
 	ugd->txt_icon_itc.item_style = "dialogue/1text.1icon";
 	ugd->txt_icon_itc.func.text_get = _gallery_genlist_text_get;
-	ugd->txt_icon_itc.func.content_get = _gallery_genlist_content_get;
+	ugd->txt_icon_itc.func.content_get = _gallery_genlist_icon_get;
 	ugd->txt_icon_itc.func.state_get = NULL;
 	ugd->txt_icon_itc.func.del = NULL;
+
+	ugd->seperator_itc.item_style = "grouptitle.dialogue.seperator";
+	ugd->seperator_itc.func.text_get = NULL;
+	ugd->seperator_itc.func.content_get = NULL;
+	ugd->seperator_itc.func.state_get = NULL;
+	ugd->seperator_itc.func.del = NULL;
+
+	ugd->seperator_end_itc.item_style = "dialogue/separator/end";
+	ugd->seperator_end_itc.func.text_get = NULL;
+	ugd->seperator_end_itc.func.content_get = NULL;
+	ugd->seperator_end_itc.func.state_get = NULL;
+	ugd->seperator_end_itc.func.del = NULL;
+
+	sep = elm_genlist_item_append(main_genlist, &ugd->seperator_itc, NULL, NULL, ELM_GENLIST_ITEM_NONE, NULL, NULL);
+	elm_genlist_item_select_mode_set(sep, ELM_OBJECT_SELECT_MODE_DISPLAY_ONLY);
 
 	for (index = GALLERY_MAIN_MENU_TITLE; index < GALLERY_MAIN_MENU_ITEM_MAX; index++)
 	{
@@ -511,35 +485,25 @@ _gallery_genlist_items_add (Evas_Object *parent, struct ug_data *ugd)
 		if (index == GALLERY_MAIN_MENU_TIME)
 		{
 			ugd->gl_it[index] = elm_genlist_item_append(main_genlist, &ugd->expandable_itc,
-											(void *)index, NULL, ELM_GENLIST_ITEM_TREE,
-											_gallery_genlist_select_cb, (void *)index);
+								    (void *)index, NULL,
+								    ELM_GENLIST_ITEM_TREE,
+								    _gallery_genlist_select_cb,
+								    (void *)index);
 		}
 		// repeat&shuffle 1txt .1icon
 		else if (index == GALLERY_MAIN_MENU_REPEAT ||
-					index == GALLERY_MAIN_MENU_SHUFFLE ||
-					index == GALLERY_MAIN_MENU_SUBTITLE_ON_OFF)
+			 index == GALLERY_MAIN_MENU_SHUFFLE)
 		{
 			ugd->gl_it[index] = elm_genlist_item_append(main_genlist, &ugd->txt_icon_itc,
-											(void *)index, NULL, ELM_GENLIST_ITEM_NONE,
-											_gallery_genlist_select_cb, (void *)index);
-		}
-		//title
-		else if (index == GALLERY_MAIN_MENU_TITLE)
-		{
-			it = elm_genlist_item_append(main_genlist, &ugd->title_itc,
-											(void *)index, NULL, ELM_GENLIST_ITEM_NONE,
-											NULL, NULL);
-			elm_genlist_item_select_mode_set(it, ELM_OBJECT_SELECT_MODE_DISPLAY_ONLY);
-		}
-		//subtitle title
-		else if (index == GALLERY_MAIN_MENU_SUBTITLE_TITLE)
-		{
-			it = elm_genlist_item_append(main_genlist, &ugd->title_itc,
-											(void *)index, NULL, ELM_GENLIST_ITEM_NONE,
-											NULL, NULL);
-			elm_genlist_item_select_mode_set(it, ELM_OBJECT_SELECT_MODE_DISPLAY_ONLY);
+								    (void *)index, NULL,
+								    ELM_GENLIST_ITEM_NONE,
+								    _gallery_genlist_select_cb,
+								    (void *)index);
 		}
 	}
+
+	sep = elm_genlist_item_append(main_genlist, &ugd->seperator_end_itc, NULL, NULL, ELM_GENLIST_ITEM_NONE, NULL, NULL);
+	elm_genlist_item_select_mode_set(sep, ELM_OBJECT_SELECT_MODE_DISPLAY_ONLY);
 
 	evas_object_smart_callback_add(main_genlist, "expanded", _gallery_genlist_exp, ugd);
 	evas_object_smart_callback_add(main_genlist, "contracted", _gallery_genlist_con, ugd);
@@ -551,7 +515,7 @@ _gallery_genlist_items_add (Evas_Object *parent, struct ug_data *ugd)
 static Evas_Object *
 _gallery_create_fullview(Evas_Object *parent, struct ug_data *ugd)
 {
-	gallery_retv_if( parent == NULL, NULL);
+	gallery_retv_if(!parent, NULL);
 
 	Evas_Object *base;
 	base = elm_layout_add(parent);
@@ -567,7 +531,7 @@ _gallery_create_fullview(Evas_Object *parent, struct ug_data *ugd)
 static Evas_Object*
 _gallery_create_naviframe(Evas_Object* parent)
 {
-	gallery_retv_if( parent == NULL, NULL);
+	gallery_retv_if(!parent, NULL);
 
 	Evas_Object *naviframe = NULL;
 	naviframe = elm_naviframe_add( parent );
@@ -588,12 +552,13 @@ static Evas_Object *_gallery_create_bg(Evas_Object *parent)
 }
 
 static void *
-_on_create(struct ui_gadget *ug, enum ug_mode mode, bundle *data, void *priv)
+_on_create(ui_gadget_h ug, enum ug_mode mode, service_h data, void *priv)
 {
+	gallery_retvm_if(!ug, NULL, "ug is NULL, check it !!");
+	gallery_retvm_if(!priv, NULL, "priv is NULL, check it !!");
+
 	Evas_Object *parent = NULL;
 	struct ug_data *ugd = NULL;
-
-	gallery_retvm_if((!ug || !priv), NULL, "handle or ui_gadget pointer is NULL, check it !!");
 
 	ugd = (struct ug_data *)priv;
 	ugd->ug = ug;
@@ -637,14 +602,13 @@ _on_create(struct ui_gadget *ug, enum ug_mode mode, bundle *data, void *priv)
 }
 
 static void
-_on_message(struct ui_gadget *ug, bundle *msg, bundle *data, void *priv)
+_on_message(ui_gadget_h ug, service_h msg, service_h data, void *priv)
 {
 }
 
 static void
-_on_event(struct ui_gadget *ug, enum ug_event event, bundle *data, void *priv)
+_on_event(ui_gadget_h ug, enum ug_event event, service_h data, void *priv)
 {
-
 	//struct ug_data *ugd = (struct ug_data *)priv;
 
 	switch (event) {
@@ -668,31 +632,29 @@ _on_event(struct ui_gadget *ug, enum ug_event event, bundle *data, void *priv)
 }
 
 static void
-_on_start(struct ui_gadget *ug, bundle *data, void *priv)
+_on_start(ui_gadget_h ug, service_h data, void *priv)
 {
 }
 
 static void
-_on_pause(struct ui_gadget *ug, bundle *data, void *priv)
-{
-
-}
-
-static void
-_on_resume(struct ui_gadget *ug, bundle *data, void *priv)
+_on_pause(ui_gadget_h ug, service_h data, void *priv)
 {
 
 }
 
 static void
-_on_destroy(struct ui_gadget *ug, bundle *data, void *priv)
+_on_resume(ui_gadget_h ug, service_h data, void *priv)
+{
+
+}
+
+static void
+_on_destroy(ui_gadget_h ug, service_h data, void *priv)
 {
 	struct ug_data *ugd;
 
-	if (!ug || !priv)
-	{
-		return;
-	}
+	gallery_retm_if(!ug, "ug is NULL, check it !!");
+	gallery_retm_if(!priv, "priv is NULL, check it !!");
 
 	ugd = priv;
 	if(ugd->main_layout)
@@ -703,27 +665,19 @@ _on_destroy(struct ui_gadget *ug, bundle *data, void *priv)
 }
 
 static void
-_on_key_event(struct ui_gadget *ug, enum ug_key_event event, bundle *data, void *priv)
+_on_key_event(ui_gadget_h ug, enum ug_key_event event, service_h data, void *priv)
 {
 
 }
 
-
 UG_MODULE_API int
 UG_MODULE_INIT(struct ug_module_ops *ops)
 {
-	struct ug_data *ugd;
+	gallery_retvm_if(!ops, -1, "ops is NULL");
 
-	if (!ops)
-	{
-		return -1;
-	}
-
+	struct ug_data *ugd = NULL;
 	ugd = calloc(1, sizeof(struct ug_data));
-	if (!ugd)
-	{
-		return -1;
-	}
+	gallery_retvm_if(!ugd, -1, "ugd is NULL");
 
 	ops->create = _on_create;
 	ops->start = _on_start;
@@ -739,16 +693,14 @@ UG_MODULE_INIT(struct ug_module_ops *ops)
 	return 0;
 }
 
-UG_MODULE_API int setting_plugin_reset(bundle *data, void *priv)
+UG_MODULE_API int setting_plugin_reset(service_h data, void *priv)
 {
 	gallery_info("Reset the settings start");
 
 	int ret = 0;
-	ret += gallery_key_reset_current_time();
-	ret += gallery_key_reset_repeat_state();
-	ret += gallery_key_reset_shuffle_state();
-	ret += gallery_key_reset_subtitle_state();
-	ret += gallery_key_reset_slideshow_effect();
+	ret += gallery_key_set_current_time(DEFAULT_TIMER);
+	ret += gallery_key_set_repeat_state(DEFAULT_REPEAT);
+	ret += gallery_key_set_shuffle_state(DEFAULT_SHUFFLE);
 
 	gallery_info("Finished");
 
@@ -758,12 +710,9 @@ UG_MODULE_API int setting_plugin_reset(bundle *data, void *priv)
 UG_MODULE_API void
 UG_MODULE_EXIT(struct ug_module_ops *ops)
 {
-	struct ug_data *ugd;
+	gallery_retm_if(!ops, "ops is NULL");
 
-	if (!ops)
-	{
-		return;
-	}
+	struct ug_data *ugd;
 
 	ugd = ops->priv;
 	if (ugd)
@@ -771,3 +720,4 @@ UG_MODULE_EXIT(struct ug_module_ops *ops)
 		free(ugd);
 	}
 }
+

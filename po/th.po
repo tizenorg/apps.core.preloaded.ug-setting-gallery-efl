@@ -1,0 +1,51 @@
+msgid "IDS_MEDIABR_OPT_SLIDE_SHOW"
+msgstr "เลื่อนชม"
+
+msgid "IDS_MEDIABR_BODY_SLIDESHOW_INTERVAL"
+msgstr "ช่วง​เวลา​การ​แสดง​แบบ​สไลด์"
+
+msgid "IDS_MEDIABR_OPT_SLIDE"
+msgstr "สไลด์"
+
+msgid "IDS_MEDIABR_OPT_2_SECONDS"
+msgstr "2 ​วินาที"
+
+msgid "IDS_MEDIABR_OPT_3_SECONDS"
+msgstr "3 วินาที"
+
+msgid "IDS_MEDIABR_BODY_SHUFFLE"
+msgstr "สับ​เพลง"
+
+msgid "IDS_MEDIABR_BODY_REPEAT"
+msgstr "ซ้ำ"
+
+msgid "IDS_MEDIABR_BODY_TRANSITION_EFFECT"
+msgstr "เอ​ฟเฟ็กต์​การ​เปลี่ยน"
+
+msgid "IDS_MEDIABR_BODY_FADE"
+msgstr "จางหายไป"
+
+msgid "IDS_MEDIABR_BODY_BLIND"
+msgstr "บัง"
+
+msgid "IDS_MEDIABR_BODY_DISSOLVE"
+msgstr "ละลาย"
+
+msgid "IDS_MEDIABR_BODY_SUBTITLES"
+msgstr "คำ​บรรยาย"
+
+msgid "IDS_MEDIABR_BODY_5_SECONDS"
+msgstr "5  ​วินาที"
+
+msgid "IDS_MEDIABR_BODY_10_SECONDS"
+msgstr "10 วินาที"
+
+msgid "IDS_MEDIABR_BODY_20_SECONDS"
+msgstr "20 ​วินาที"
+
+msgid "IDS_MEDIABR_MBODY_IRIS_M_EFFECT"
+msgstr "ไอ​ริ​ส"
+
+msgid "IDS_MEDIABR_BODY_ACTIVATION"
+msgstr "ใช้​งาน"
+

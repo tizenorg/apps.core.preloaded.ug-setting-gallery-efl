@@ -4,6 +4,9 @@ msgstr "幻灯片"
 msgid "IDS_MEDIABR_BODY_SLIDESHOW_INTERVAL"
 msgstr "幻灯片播放间隔"
 
+msgid "IDS_MEDIABR_OPT_SLIDE"
+msgstr "幻灯片"
+
 msgid "IDS_MEDIABR_OPT_2_SECONDS"
 msgstr "2 秒"
 
@@ -16,8 +19,20 @@ msgstr "随机播放"
 msgid "IDS_MEDIABR_BODY_REPEAT"
 msgstr "重复"
 
+msgid "IDS_MEDIABR_BODY_TRANSITION_EFFECT"
+msgstr "转换效果"
+
+msgid "IDS_MEDIABR_BODY_FADE"
+msgstr "淡出"
+
+msgid "IDS_MEDIABR_BODY_BLIND"
+msgstr "百叶窗"
+
+msgid "IDS_MEDIABR_BODY_DISSOLVE"
+msgstr "溶解"
+
 msgid "IDS_MEDIABR_BODY_SUBTITLES"
-msgstr "说明字幕"
+msgstr "字幕"
 
 msgid "IDS_MEDIABR_BODY_5_SECONDS"
 msgstr "5 秒"
@@ -27,4 +42,10 @@ msgstr "10 秒"
 
 msgid "IDS_MEDIABR_BODY_20_SECONDS"
 msgstr "20 秒"
+
+msgid "IDS_MEDIABR_MBODY_IRIS_M_EFFECT"
+msgstr "彩色效果"
+
+msgid "IDS_MEDIABR_BODY_ACTIVATION"
+msgstr "启动"
 
