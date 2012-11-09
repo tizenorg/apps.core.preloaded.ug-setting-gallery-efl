@@ -53,6 +53,7 @@ export LD_LIBRARY_PATH=/usr/lib/ug:$LD_LIBRARY_PATH
 %postun -p /sbin/ldconfig
 
 %files
+%manifest ug-setting-gallery-efl.manifest
 %defattr(-,root,root,-)
 /opt/ug/lib/*
 /opt/ug/res/*
