@@ -1,51 +1,51 @@
 msgid "IDS_MEDIABR_OPT_SLIDE_SHOW"
-msgstr "Слайд-шоу"
+msgstr "Taispeántas sleamhnán"
 
 msgid "IDS_MEDIABR_BODY_SLIDESHOW_INTERVAL"
-msgstr "Интервал для слайд-шоу"
+msgstr "Eatramh taispeántais sleamhnán"
 
 msgid "IDS_MEDIABR_OPT_SLIDE"
-msgstr "Слайд-шоу"
+msgstr "Sleamhnán"
 
 msgid "IDS_MEDIABR_OPT_2_SECONDS"
-msgstr "2 секунды"
+msgstr "2 shoicind"
 
 msgid "IDS_MEDIABR_OPT_3_SECONDS"
-msgstr "3 секунды"
+msgstr "3 shoicind"
 
 msgid "IDS_MEDIABR_BODY_SHUFFLE"
-msgstr "Случайный порядок"
+msgstr "Suaitheadh"
 
 msgid "IDS_MEDIABR_BODY_REPEAT"
-msgstr "Повторить"
+msgstr "Déan arís"
 
 msgid "IDS_MEDIABR_BODY_TRANSITION_EFFECT"
-msgstr "Эффект перехода"
+msgstr "Maisíocht trasdula"
 
 msgid "IDS_MEDIABR_BODY_FADE"
-msgstr "Растворение"
+msgstr "Céimnigh"
 
 msgid "IDS_MEDIABR_BODY_BLIND"
-msgstr "Жалюзи"
+msgstr "Dallóg"
 
 msgid "IDS_MEDIABR_BODY_DISSOLVE"
-msgstr "Растворение"
+msgstr "Leáigh"
 
 msgid "IDS_MEDIABR_BODY_SUBTITLES"
-msgstr "Субтитры"
+msgstr "Fotheidil"
 
 msgid "IDS_MEDIABR_BODY_5_SECONDS"
-msgstr "5 секунд"
+msgstr "5 shoicind"
 
 msgid "IDS_MEDIABR_BODY_10_SECONDS"
-msgstr "10 секунд"
+msgstr "10 soicind"
 
 msgid "IDS_MEDIABR_BODY_20_SECONDS"
-msgstr "20 секунд"
+msgstr "20 soicind"
 
 msgid "IDS_MEDIABR_MBODY_IRIS_M_EFFECT"
-msgstr "Радуга"
+msgstr "Feileastram"
 
 msgid "IDS_MEDIABR_BODY_ACTIVATION"
-msgstr "Активация"
+msgstr "Gníomhachtú"
 

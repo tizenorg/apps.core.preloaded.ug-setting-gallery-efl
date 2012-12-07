@@ -102,7 +102,7 @@ gallery_key_get_time_vconf_value(int index)
 	switch(index)
 	{
 		case 0:
-			value = VCONFKEY_GALLERY_ITV_TIME_2S;
+			value = VCONFKEY_GALLERY_ITV_TIME_1S;
 			break;
 
 		case 1:
@@ -136,7 +136,7 @@ gallery_key_time_menu_get(int index)
 	switch(index)
 	{
 		case 0:
-			text = SGUG_TR_2s;
+			text = SGUG_TR_1s;
 			break;
 
 		case 1:
@@ -163,7 +163,6 @@ gallery_key_time_menu_get(int index)
 	return text;
 
 }
-
 
 int
 gallery_key_set_current_time(double value)
@@ -200,4 +199,5 @@ gallery_key_set_shuffle_state(bool value)
 
 	return 0;
 }
+
 

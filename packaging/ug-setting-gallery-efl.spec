@@ -1,6 +1,6 @@
 Name:       ug-setting-gallery-efl
 Summary:    UG setting gallery ELF
-Version:    1.0.32
+Version:    1.0.42
 Release:    1
 Group:      Applications
 License:    Flora Software License
@@ -39,7 +39,7 @@ make %{?jobs:-j%jobs}
 
 %install
 %make_install
-
+mkdir -p %{buildroot}/usr/share/license
 
 %post
 /sbin/ldconfig
@@ -55,5 +55,7 @@ export LD_LIBRARY_PATH=/usr/lib/ug:$LD_LIBRARY_PATH
 %files
 %manifest ug-setting-gallery-efl.manifest
 %defattr(-,root,root,-)
-/opt/ug/lib/*
-/opt/ug/res/*
+/usr/ug/lib/*
+/usr/ug/res/*
+/usr/share/license/%{name}
+

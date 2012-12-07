@@ -2,37 +2,37 @@ msgid "IDS_MEDIABR_OPT_SLIDE_SHOW"
 msgstr "Слайд-шоу"
 
 msgid "IDS_MEDIABR_BODY_SLIDESHOW_INTERVAL"
-msgstr "Интервал для слайд-шоу"
+msgstr "Слайдшоу аралығы"
 
 msgid "IDS_MEDIABR_OPT_SLIDE"
-msgstr "Слайд-шоу"
+msgstr "Слайд"
 
 msgid "IDS_MEDIABR_OPT_2_SECONDS"
-msgstr "2 секунды"
+msgstr "2 секунд"
 
 msgid "IDS_MEDIABR_OPT_3_SECONDS"
-msgstr "3 секунды"
+msgstr "3 секунд"
 
 msgid "IDS_MEDIABR_BODY_SHUFFLE"
-msgstr "Случайный порядок"
+msgstr "Кездейсоқ тәртіп"
 
 msgid "IDS_MEDIABR_BODY_REPEAT"
-msgstr "Повторить"
+msgstr "Қайталау"
 
 msgid "IDS_MEDIABR_BODY_TRANSITION_EFFECT"
-msgstr "Эффект перехода"
+msgstr "Өтпелі әсер"
 
 msgid "IDS_MEDIABR_BODY_FADE"
-msgstr "Растворение"
+msgstr "Тегіс пайда болу"
 
 msgid "IDS_MEDIABR_BODY_BLIND"
-msgstr "Жалюзи"
+msgstr "Көрінбейді"
 
 msgid "IDS_MEDIABR_BODY_DISSOLVE"
-msgstr "Растворение"
+msgstr "Жоқ болу"
 
 msgid "IDS_MEDIABR_BODY_SUBTITLES"
-msgstr "Субтитры"
+msgstr "Субтитрлер"
 
 msgid "IDS_MEDIABR_BODY_5_SECONDS"
 msgstr "5 секунд"
@@ -44,8 +44,8 @@ msgid "IDS_MEDIABR_BODY_20_SECONDS"
 msgstr "20 секунд"
 
 msgid "IDS_MEDIABR_MBODY_IRIS_M_EFFECT"
-msgstr "Радуга"
+msgstr "Жыланқияқ"
 
 msgid "IDS_MEDIABR_BODY_ACTIVATION"
-msgstr "Активация"
+msgstr "Активтеу"
 

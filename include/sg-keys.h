@@ -28,37 +28,23 @@
 
 #define VCONFKEY_GALLERY_SHUFFLE_STATE		"db/setting/gallery/shuffle_state" //boolean
 
-int
-gallery_key_init_current_time(double *val);
 
-int
-gallery_key_init_repeat_state(int *b_val);
+int gallery_key_init_current_time(double *val);
+int gallery_key_init_repeat_state(int *b_val);
+int gallery_key_init_shuffle_state(int *b_val);
 
-int
-gallery_key_init_shuffle_state(int *b_val);
+void gallery_key_text_popup(void *data, char *msg);
 
-void
-gallery_key_text_popup(void *data, char *msg);
+char* gallery_key_time_menu_get(int index);
+char* gallery_key_size_menu_get(int index);
 
-char *
-gallery_key_time_menu_get(int index);
-
-char *
-gallery_key_size_menu_get(int index);
-
-double
-gallery_key_get_time_vconf_value(int index);
-
-char*
-gallery_key_get_size_vconf_value(int index);
+double gallery_key_get_time_vconf_value(int index);
+char* gallery_key_get_size_vconf_value(int index);
 
 int gallery_key_set_current_time(double value);
 int gallery_key_set_repeat_state(bool value);
 int gallery_key_set_shuffle_state(bool value);
 
-int gallery_key_init_inline_video_state(int *b_val);
-int gallery_key_set_inline_video_state(bool value);
 
 #endif
-
 

@@ -1,51 +1,51 @@
 msgid "IDS_MEDIABR_OPT_SLIDE_SHOW"
-msgstr "Bildefremvisning"
+msgstr "Diapositiba aurkezpena"
 
 msgid "IDS_MEDIABR_BODY_SLIDESHOW_INTERVAL"
-msgstr "Bildefremvisningsintervall"
+msgstr "Aurkzpen tartea"
 
 msgid "IDS_MEDIABR_OPT_SLIDE"
-msgstr "Lysbilde"
+msgstr "Diapositiba"
 
 msgid "IDS_MEDIABR_OPT_2_SECONDS"
-msgstr "2 sekunder"
+msgstr "2 segundo"
 
 msgid "IDS_MEDIABR_OPT_3_SECONDS"
-msgstr "3 sekunder"
+msgstr "3 segundo"
 
 msgid "IDS_MEDIABR_BODY_SHUFFLE"
-msgstr "Tilfeldig rekkefølge"
+msgstr "Ausazko ordena"
 
 msgid "IDS_MEDIABR_BODY_REPEAT"
-msgstr "Gjenta"
+msgstr "Errepikatu"
 
 msgid "IDS_MEDIABR_BODY_TRANSITION_EFFECT"
-msgstr "Overgangseffekt"
+msgstr "Trantsizio efektua"
 
 msgid "IDS_MEDIABR_BODY_FADE"
-msgstr "Fade"
+msgstr "Koloregabetu"
 
 msgid "IDS_MEDIABR_BODY_BLIND"
-msgstr "Persienne"
+msgstr "Itsua"
 
 msgid "IDS_MEDIABR_BODY_DISSOLVE"
-msgstr "Oppløs"
+msgstr "Disolbatu"
 
 msgid "IDS_MEDIABR_BODY_SUBTITLES"
-msgstr "Undertekster"
+msgstr "Azpitituluak"
 
 msgid "IDS_MEDIABR_BODY_5_SECONDS"
-msgstr "5 sekunder"
+msgstr "5 segundo"
 
 msgid "IDS_MEDIABR_BODY_10_SECONDS"
-msgstr "10 sekunder"
+msgstr "10 segundo"
 
 msgid "IDS_MEDIABR_BODY_20_SECONDS"
-msgstr "20 sekunder"
+msgstr "20 segundo"
 
 msgid "IDS_MEDIABR_MBODY_IRIS_M_EFFECT"
-msgstr "Iris"
+msgstr "Irisa"
 
 msgid "IDS_MEDIABR_BODY_ACTIVATION"
-msgstr "Aktivering"
+msgstr "Aktibazioa"
 

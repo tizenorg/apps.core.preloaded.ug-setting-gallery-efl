@@ -18,6 +18,7 @@
 #define UG_MODULE_API __attribute__ ((visibility("default")))
 #endif
 
+#define USE_DIALOGUE_STYLE	// new style has bug
 
 #include <stdio.h>
 #include <stdbool.h>
@@ -25,7 +26,6 @@
 #include <Elementary.h>
 #include <ui-gadget-module.h>
 #include <vconf.h>
-
 
 #include "sg-keys.h"
 #include "sg-debug.h"
@@ -49,6 +49,21 @@ _gallery_quit_cb(void *data, Evas_Object *obj, void *event_info)
 	}
 }
 
+static char *_gallery_get_file_name(char *path)
+{
+	if (NULL == path || '\0' == path[0]) {
+		return NULL;	/* invalid arguement */
+	}
+	char *p = strrchr(path, '/');
+	if (!p) {
+		return (char *)g_strdup(path);	/*  cannot find '/' */
+	}
+	if ('\0' == p[1]) {
+		return NULL;	/* end with '/' */
+	}
+	return (char *)g_strdup(p + 1);
+}
+
 static char *_gallery_get_menu_elm_text(int param)
 {
 	char *text = NULL;
@@ -70,7 +85,6 @@ static char *_gallery_get_menu_elm_text(int param)
 		case GALLERY_MAIN_MENU_TITLE:
 			text = SGUG_TR_SLIDESHOW;
 			break;
-
 		default:
 			break;
 	}
@@ -111,7 +125,6 @@ static char *_gallery_get_menu_sub_elm_text(int param)
 		case GALLERY_MAIN_MENU_TIME:
 			text = _gallery_get_menu_time_text();
 			break;
-
 		default:
 			break;
 	}
@@ -167,7 +180,6 @@ _gallery_expand_common_text_get(const char *part, void *data, gallery_main_menu_
 			case GALLERY_MAIN_MENU_TIME:
 				txt = gallery_key_time_menu_get(param);
 				break;
-
 			default:
 				break;
 		}
@@ -186,7 +198,6 @@ _gallery_time_text_get(void *data, Evas_Object *obj, const char *part)
 
 	return _gallery_expand_common_text_get(part, data, GALLERY_MAIN_MENU_TIME);
 }
-
 
 static Evas_Object*
 _gallery_expand_common_icon_get(Evas_Object *obj, const char *part, int param, int radio_value, Evas_Object *radio_group)
@@ -250,7 +261,6 @@ _gallery_genlist_icon_cb(void *data,  Evas_Object *obj, void *event_info)
 			gallery_key_text_popup(ugd,SGUG_TR_FAILED);
 		}
 	}
-
 }
 
 static Evas_Object *_gallery_create_check(Evas_Object *obj, struct ug_data *ugd, int index, Init_State_Func func, int *state)
@@ -299,11 +309,11 @@ _gallery_genlist_icon_get(void *data, Evas_Object *obj, const char *part)
 			check = _gallery_create_check(obj, ugd, index, gallery_key_init_shuffle_state, &ugd->shuffle_state);
 			ugd->shuffle_btn = check;
 		}
-
 	}
 
 	return check;
 }
+
 
 static void
 _gallery_time_select_cb(void *data, Evas_Object *obj, void *event_info)
@@ -343,6 +353,8 @@ _gallery_genlist_time_select_cb(void *data, Evas_Object *obj, void *event_info)
 	struct ug_data *ugd = evas_object_data_get(obj, "ugd");
 	gallery_ret_if(!ugd);
 
+	gallery_info("_gallery_genlist_time_select_cb");
+
 	int index = 0;
 	Elm_Object_Item *item = (Elm_Object_Item *)event_info;
 
@@ -350,7 +362,7 @@ _gallery_genlist_time_select_cb(void *data, Evas_Object *obj, void *event_info)
 
 	Evas_Object *gl = elm_object_item_widget_get(item);
 
-	ugd->check_time_itc.item_style = "dialogue/1text.1icon/expandable2";
+	ugd->check_time_itc.item_style = "dialogue/1text.1icon.3";
 	ugd->check_time_itc.func.text_get = _gallery_time_text_get;
 	ugd->check_time_itc.func.content_get = _gallery_time_content_get;
 	ugd->check_time_itc.func.state_get = NULL;
@@ -373,6 +385,8 @@ _gallery_genlist_exp(void *data, Evas_Object *obj, void *event_info)
 	struct ug_data *ugd = evas_object_data_get(obj, "ugd");
 	gallery_ret_if(!ugd);
 
+	gallery_info("_gallery_genlist_exp");
+
 	Elm_Object_Item *item = (Elm_Object_Item *)event_info;
 
 	elm_genlist_item_selected_set(item, EINA_FALSE);
@@ -382,6 +396,58 @@ _gallery_genlist_exp(void *data, Evas_Object *obj, void *event_info)
 		_gallery_genlist_time_select_cb(data, obj, event_info);
 	}
 }
+static void
+_gallery_genlist_realized(void *data, Evas_Object *obj, void *event_info)
+{
+	gallery_ret_if(!obj);
+	gallery_ret_if(!event_info);
+
+	struct ug_data *ugd = (struct ug_data *)data;
+	gallery_ret_if(!ugd);
+
+	Elm_Object_Item *item = (Elm_Object_Item *)event_info;
+
+	int index = (int)elm_object_item_data_get(item);
+
+	if(index-1 == GALLERY_MAIN_MENU_TITLE)
+	{
+		elm_object_item_signal_emit(item, "elm,state,top", "");
+	}
+	else if(index+1 == GALLERY_MAIN_MENU_ITEM_MAX)
+	{
+		elm_object_item_signal_emit(item, "elm,state,bottom", "");
+	}
+	else
+	{
+		elm_object_item_signal_emit(item, "elm,state,center", "");
+	}
+}
+
+static void
+_gallery_main_layout_ug_cb(ui_gadget_h ug, enum ug_mode mode,
+			     void *priv)
+{
+	gallery_ret_if(priv == NULL);
+	gallery_ret_if(ug == NULL);
+	Evas_Object *base = NULL;
+	gallery_info("_gallery_main_layout_ug_cb");
+
+	base = (Evas_Object *) ug_get_layout(ug);
+	if (!base)
+		return;
+
+	switch (mode) {
+		case UG_MODE_FULLVIEW:
+			evas_object_size_hint_weight_set(base, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+			elm_win_resize_object_add(ug_get_window(), base);
+			evas_object_show(base);
+			break;
+		default:
+			break;
+	}
+	gallery_info("end _gallery_main_layout_ug_cb");
+}
+
 
 static void
 _gallery_genlist_select_cb(void *data, Evas_Object *obj, void *event_info)
@@ -439,12 +505,18 @@ _gallery_genlist_items_add (Evas_Object *parent, struct ug_data *ugd)
 
 	main_genlist = elm_genlist_add(parent);
 
+#ifdef USE_DIALOGUE_STYLE
 	elm_object_style_set(main_genlist, "dialogue");
+#else
+	evas_object_smart_callback_add(main_genlist, "realized", _gallery_genlist_realized, ugd);
+#endif
 
 	evas_object_size_hint_weight_set(main_genlist, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
 	evas_object_size_hint_align_set(main_genlist, EVAS_HINT_FILL, EVAS_HINT_FILL);
 
 	ugd->genlist = main_genlist;
+
+	evas_object_data_set(ugd->genlist, "ugd", ugd);
 
 	ugd->title_itc.item_style = "dialogue/title";
 	ugd->title_itc.func.text_get = _gallery_genlist_text_get;
@@ -463,6 +535,12 @@ _gallery_genlist_items_add (Evas_Object *parent, struct ug_data *ugd)
 	ugd->txt_icon_itc.func.content_get = _gallery_genlist_icon_get;
 	ugd->txt_icon_itc.func.state_get = NULL;
 	ugd->txt_icon_itc.func.del = NULL;
+
+	ugd->two_txt_icon_itc.item_style = "dialogue/2text.1icon.6";
+	ugd->two_txt_icon_itc.func.text_get = _gallery_genlist_text_get;
+	ugd->two_txt_icon_itc.func.content_get = _gallery_genlist_icon_get;
+	ugd->two_txt_icon_itc.func.state_get = NULL;
+	ugd->two_txt_icon_itc.func.del = NULL;
 
 	ugd->seperator_itc.item_style = "grouptitle.dialogue.seperator";
 	ugd->seperator_itc.func.text_get = NULL;
@@ -517,15 +595,27 @@ _gallery_create_fullview(Evas_Object *parent, struct ug_data *ugd)
 {
 	gallery_retv_if(!parent, NULL);
 
-	Evas_Object *base;
-	base = elm_layout_add(parent);
-	gallery_retv_if( base == NULL, NULL );
+	Evas_Object *layout;
+	layout = elm_layout_add(parent);
+	gallery_retv_if( layout == NULL, NULL );
 
-	elm_layout_theme_set(base, "layout", "application", "default");
-	edje_object_signal_emit(_EDJ(base), "elm,state,show,indicator", "elm");
-	elm_object_part_content_set(base, "elm.swallow.bg", ugd->bg);
+	Eina_Bool ret = EINA_FALSE;
 
-	return base;
+	const char *profile = elm_config_profile_get();
+	if (!strcmp(profile,"mobile"))
+	{
+		ret = elm_layout_theme_set(layout, "layout", "application", "default");
+		gallery_debug("layout/application/default");
+	}
+	else if (!strcmp(profile,"desktop"))
+	{
+		ret = elm_layout_theme_set(layout, "layout", "application", "noindicator");
+		gallery_debug("layout/application/noindicator");
+	}
+
+	evas_object_size_hint_weight_set(layout, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+
+	return layout;
 }
 
 static Evas_Object*
@@ -545,7 +635,7 @@ static Evas_Object *_gallery_create_bg(Evas_Object *parent)
 {
 	Evas_Object *bg = elm_bg_add(parent);
 	evas_object_size_hint_weight_set(bg, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-	elm_win_resize_object_add(parent, bg);
+	elm_object_part_content_set(parent, "elm.swallow.bg", bg);
 	evas_object_show(bg);
 
     return bg;
@@ -564,12 +654,10 @@ _on_create(ui_gadget_h ug, enum ug_mode mode, service_h data, void *priv)
 	ugd->ug = ug;
 
 	/* Bind text domain for internalization */
-	bindtextdomain("ug-setting-gallery-efl" , "/opt/ug/res/locale");
+	bindtextdomain("ug-setting-gallery-efl" , "/usr/ug/res/locale");
 
 	parent = (Evas_Object *)ug_get_parent_layout(ug);
 	gallery_retvm_if(parent == NULL, NULL, "parent layout is NULL");
-
-	ugd->bg = _gallery_create_bg(parent);
 
 	if (mode == UG_MODE_FULLVIEW)
 	{
@@ -577,8 +665,11 @@ _on_create(ui_gadget_h ug, enum ug_mode mode, service_h data, void *priv)
 	}
 	else
 	{
-		ugd->main_layout = NULL;
+		gallery_info("It is not UG_MODE_FULLVIEW");
+		return NULL;
 	}
+
+	ugd->bg = _gallery_create_bg(ugd->main_layout);
 
 	if(ugd->main_layout)
 	{
@@ -588,13 +679,14 @@ _on_create(ui_gadget_h ug, enum ug_mode mode, service_h data, void *priv)
 
 	ugd->genlist = _gallery_genlist_items_add(ugd->naviframe,ugd);
 
-	evas_object_data_set(ugd->genlist, "ugd", ugd);
+	//evas_object_data_set(ugd->genlist, "ugd", ugd);
 
 	ugd->backbtn = elm_button_add(ugd->naviframe);
 	evas_object_smart_callback_add(ugd->backbtn, "clicked", _gallery_quit_cb, ugd);
+	elm_object_style_set(ugd->backbtn, "naviframe/end_btn/default");
+
 	elm_naviframe_item_push(ugd->naviframe, SGUG_TR_GALLERY, ugd->backbtn,
 				NULL, ugd->genlist, NULL);
-	elm_object_style_set(ugd->backbtn, "naviframe/end_btn/default");
 
 	evas_object_show(ugd->main_layout);
 
@@ -688,7 +780,7 @@ UG_MODULE_INIT(struct ug_module_ops *ops)
 	ops->key_event = _on_key_event;
 	ops->event = _on_event;
 	ops->priv = ugd;
-	ops->opt = UG_OPT_INDICATOR_PORTRAIT_ONLY;
+	ops->opt = UG_OPT_INDICATOR_ENABLE;
 
 	return 0;
 }
@@ -701,7 +793,6 @@ UG_MODULE_API int setting_plugin_reset(service_h data, void *priv)
 	ret += gallery_key_set_current_time(DEFAULT_TIMER);
 	ret += gallery_key_set_repeat_state(DEFAULT_REPEAT);
 	ret += gallery_key_set_shuffle_state(DEFAULT_SHUFFLE);
-
 	gallery_info("Finished");
 
 	return ret;
@@ -720,4 +811,3 @@ UG_MODULE_EXIT(struct ug_module_ops *ops)
 		free(ugd);
 	}
 }
-

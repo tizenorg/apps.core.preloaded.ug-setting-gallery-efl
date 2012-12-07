@@ -47,5 +47,5 @@ msgid "IDS_MEDIABR_MBODY_IRIS_M_EFFECT"
 msgstr "彩色效果"
 
 msgid "IDS_MEDIABR_BODY_ACTIVATION"
-msgstr "启动"
+msgstr "激活"
 

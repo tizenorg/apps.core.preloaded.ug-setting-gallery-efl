@@ -45,6 +45,8 @@
 #define SGUG_TR_REPEAT		_SG_GETLOCALSTR("IDS_MEDIABR_BODY_REPEAT")
 #define SGUG_TR_SHUFFLE		_SG_GETLOCALSTR("IDS_MEDIABR_BODY_SHUFFLE")
 
+
+#define SGUG_TR_1s	_SG_GETSYSTEMSTR("IDS_COM_BODY_1_SECOND")
 #define SGUG_TR_2s	_SG_GETLOCALSTR("IDS_MEDIABR_OPT_2_SECONDS")
 #define SGUG_TR_3s	_SG_GETLOCALSTR("IDS_MEDIABR_OPT_3_SECONDS")
 #define SGUG_TR_5s	_SG_GETLOCALSTR("IDS_MEDIABR_BODY_5_SECONDS")
@@ -52,11 +54,14 @@
 #define SGUG_TR_20s	_SG_GETLOCALSTR("IDS_MEDIABR_BODY_20_SECONDS")
 #define SGUG_TR_FAILED	_("Setting failed, please try again..")
 
+
+#define VCONFKEY_GALLERY_ITV_TIME_1S	(1.0f)
 #define VCONFKEY_GALLERY_ITV_TIME_2S	(2.0f)
 #define VCONFKEY_GALLERY_ITV_TIME_3S	(3.0f)
 #define VCONFKEY_GALLERY_ITV_TIME_5S	(5.0f)
 #define VCONFKEY_GALLERY_ITV_TIME_10S	(10.0f)
 #define VCONFKEY_GALLERY_ITV_TIME_20S	(20.0f)
+
 
 #define DEFAULT_TIMER			VCONFKEY_GALLERY_ITV_TIME_3S
 #define DEFAULT_REPEAT			false
@@ -82,7 +87,7 @@ typedef enum
 }gallery_main_menu_item_t;
 #endif
 
-struct ug_data
+typedef struct ug_data
 {
 	Evas_Object *main_layout;
 	Evas_Object *bg;
@@ -101,6 +106,7 @@ struct ug_data
 	Evas_Object *popup;
 	Elm_Object_Item *gl_it[GALLERY_MAIN_MENU_ITEM_MAX];
 
+
 	Elm_Genlist_Item_Class check_time_itc;
 	Elm_Genlist_Item_Class expandable_itc;
 
@@ -110,9 +116,11 @@ struct ug_data
 
 	Elm_Genlist_Item_Class seperator_itc;
 	Elm_Genlist_Item_Class seperator_end_itc;
+	Elm_Genlist_Item_Class two_txt_icon_itc;
 
-	struct ui_gadget *ug;
-};
+	ui_gadget_h	ug;
+	ui_gadget_h ug_loading;
+}st_ug_data;
 
 
 #endif

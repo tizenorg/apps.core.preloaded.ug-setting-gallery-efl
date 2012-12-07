@@ -1,51 +1,51 @@
 msgid "IDS_MEDIABR_OPT_SLIDE_SHOW"
-msgstr "Tampilan slide"
+msgstr "Bildefremvisning"
 
 msgid "IDS_MEDIABR_BODY_SLIDESHOW_INTERVAL"
-msgstr "Jeda tayangan slide"
+msgstr "Bildefremvisningsintervall"
 
 msgid "IDS_MEDIABR_OPT_SLIDE"
-msgstr "Slide"
+msgstr "Lysbilde"
 
 msgid "IDS_MEDIABR_OPT_2_SECONDS"
-msgstr "2 detik"
+msgstr "2 sekunder"
 
 msgid "IDS_MEDIABR_OPT_3_SECONDS"
-msgstr "3 detik"
+msgstr "3 sekunder"
 
 msgid "IDS_MEDIABR_BODY_SHUFFLE"
-msgstr "Acak"
+msgstr "Tilfeldig avspilling"
 
 msgid "IDS_MEDIABR_BODY_REPEAT"
-msgstr "Mengulang"
+msgstr "Gjenta"
 
 msgid "IDS_MEDIABR_BODY_TRANSITION_EFFECT"
-msgstr "Efek transisi"
+msgstr "Overgangseffekt"
 
 msgid "IDS_MEDIABR_BODY_FADE"
-msgstr "Berangsur"
+msgstr "Fade"
 
 msgid "IDS_MEDIABR_BODY_BLIND"
-msgstr "Tirai"
+msgstr "Persienne"
 
 msgid "IDS_MEDIABR_BODY_DISSOLVE"
-msgstr "Larut"
+msgstr "Oppløs"
 
 msgid "IDS_MEDIABR_BODY_SUBTITLES"
-msgstr "Subtitel"
+msgstr "Undertekster"
 
 msgid "IDS_MEDIABR_BODY_5_SECONDS"
-msgstr "5 detik"
+msgstr "5 sekunder"
 
 msgid "IDS_MEDIABR_BODY_10_SECONDS"
-msgstr "10 detik"
+msgstr "10 sekunder"
 
 msgid "IDS_MEDIABR_BODY_20_SECONDS"
-msgstr "20 detik"
+msgstr "20 sekunder"
 
 msgid "IDS_MEDIABR_MBODY_IRIS_M_EFFECT"
 msgstr "Iris"
 
 msgid "IDS_MEDIABR_BODY_ACTIVATION"
-msgstr "Pengaktifan"
+msgstr "Aktivering"
 

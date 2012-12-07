@@ -1,51 +1,51 @@
 msgid "IDS_MEDIABR_OPT_SLIDE_SHOW"
-msgstr "Persembahan slaid"
+msgstr "Presentación de diapositivas"
 
 msgid "IDS_MEDIABR_BODY_SLIDESHOW_INTERVAL"
-msgstr "Waktu selang persembahan slaid"
+msgstr "Intervalo de presentación"
 
 msgid "IDS_MEDIABR_OPT_SLIDE"
-msgstr "Slaid"
+msgstr "Diapositiva"
 
 msgid "IDS_MEDIABR_OPT_2_SECONDS"
-msgstr "2 saat"
+msgstr "2 segundos"
 
 msgid "IDS_MEDIABR_OPT_3_SECONDS"
-msgstr "3 saat"
+msgstr "3 segundos"
 
 msgid "IDS_MEDIABR_BODY_SHUFFLE"
-msgstr "Rombakan"
+msgstr "Orde aleatoria"
 
 msgid "IDS_MEDIABR_BODY_REPEAT"
-msgstr "Ulang"
+msgstr "Repetir"
 
 msgid "IDS_MEDIABR_BODY_TRANSITION_EFFECT"
-msgstr "Kesan peralihan"
+msgstr "Efecto de transición"
 
 msgid "IDS_MEDIABR_BODY_FADE"
-msgstr "Pudar"
+msgstr "Atenuar"
 
 msgid "IDS_MEDIABR_BODY_BLIND"
-msgstr "Bidai"
+msgstr "Persiana"
 
 msgid "IDS_MEDIABR_BODY_DISSOLVE"
-msgstr "Lenyap"
+msgstr "Fundir"
 
 msgid "IDS_MEDIABR_BODY_SUBTITLES"
-msgstr "Sari kata"
+msgstr "Subtítulos"
 
 msgid "IDS_MEDIABR_BODY_5_SECONDS"
-msgstr "5 saat"
+msgstr "5 segundos"
 
 msgid "IDS_MEDIABR_BODY_10_SECONDS"
-msgstr "10 saat"
+msgstr "10 segundos"
 
 msgid "IDS_MEDIABR_BODY_20_SECONDS"
-msgstr "20 saat"
+msgstr "20 segundos"
 
 msgid "IDS_MEDIABR_MBODY_IRIS_M_EFFECT"
 msgstr "Iris"
 
 msgid "IDS_MEDIABR_BODY_ACTIVATION"
-msgstr "Pengaktifan"
+msgstr "Activación"
 

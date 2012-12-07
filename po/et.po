@@ -1,51 +1,51 @@
 msgid "IDS_MEDIABR_OPT_SLIDE_SHOW"
-msgstr "Слайд-шоу"
+msgstr "Slaidiseanss"
 
 msgid "IDS_MEDIABR_BODY_SLIDESHOW_INTERVAL"
-msgstr "Интервал для слайд-шоу"
+msgstr "Slaidiseansi intervall"
 
 msgid "IDS_MEDIABR_OPT_SLIDE"
-msgstr "Слайд-шоу"
+msgstr "Slaid"
 
 msgid "IDS_MEDIABR_OPT_2_SECONDS"
-msgstr "2 секунды"
+msgstr "2 sekundit"
 
 msgid "IDS_MEDIABR_OPT_3_SECONDS"
-msgstr "3 секунды"
+msgstr "3 sekundit"
 
 msgid "IDS_MEDIABR_BODY_SHUFFLE"
-msgstr "Случайный порядок"
+msgstr "Juhuesitus"
 
 msgid "IDS_MEDIABR_BODY_REPEAT"
-msgstr "Повторить"
+msgstr "Korda"
 
 msgid "IDS_MEDIABR_BODY_TRANSITION_EFFECT"
-msgstr "Эффект перехода"
+msgstr "Ülemineku efekt"
 
 msgid "IDS_MEDIABR_BODY_FADE"
-msgstr "Растворение"
+msgstr "Hajumine"
 
 msgid "IDS_MEDIABR_BODY_BLIND"
-msgstr "Жалюзи"
+msgstr "Vari"
 
 msgid "IDS_MEDIABR_BODY_DISSOLVE"
-msgstr "Растворение"
+msgstr "Lahuta"
 
 msgid "IDS_MEDIABR_BODY_SUBTITLES"
-msgstr "Субтитры"
+msgstr "Subtiitrid"
 
 msgid "IDS_MEDIABR_BODY_5_SECONDS"
-msgstr "5 секунд"
+msgstr "5 sekundit"
 
 msgid "IDS_MEDIABR_BODY_10_SECONDS"
-msgstr "10 секунд"
+msgstr "10 sekundit"
 
 msgid "IDS_MEDIABR_BODY_20_SECONDS"
-msgstr "20 секунд"
+msgstr "20 sekundit"
 
 msgid "IDS_MEDIABR_MBODY_IRIS_M_EFFECT"
-msgstr "Радуга"
+msgstr "Iiris"
 
 msgid "IDS_MEDIABR_BODY_ACTIVATION"
-msgstr "Активация"
+msgstr "Aktiveerimine"
 

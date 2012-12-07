@@ -1,51 +1,51 @@
 msgid "IDS_MEDIABR_OPT_SLIDE_SHOW"
-msgstr "הצגת שקופיות"
+msgstr "Սլայդ շոու"
 
 msgid "IDS_MEDIABR_BODY_SLIDESHOW_INTERVAL"
-msgstr "מרווח הצגת שקופיות"
+msgstr "Սահկահանդեսի միջակայքը"
 
 msgid "IDS_MEDIABR_OPT_SLIDE"
-msgstr "החלק"
+msgstr "Սլայդ"
 
 msgid "IDS_MEDIABR_OPT_2_SECONDS"
-msgstr "2 שניות"
+msgstr "2 վայրկյան"
 
 msgid "IDS_MEDIABR_OPT_3_SECONDS"
-msgstr "3 שניות"
+msgstr "3  վայրկյան"
 
 msgid "IDS_MEDIABR_BODY_SHUFFLE"
-msgstr "ערבב"
+msgstr "Պատահական"
 
 msgid "IDS_MEDIABR_BODY_REPEAT"
-msgstr "חזור על"
+msgstr "Կրկնել"
 
 msgid "IDS_MEDIABR_BODY_TRANSITION_EFFECT"
-msgstr "אפקט מעבר"
+msgstr "Փոխանցման էֆեկտ"
 
 msgid "IDS_MEDIABR_BODY_FADE"
-msgstr "עמעום"
+msgstr "Անհետացող"
 
 msgid "IDS_MEDIABR_BODY_BLIND"
-msgstr "תריס"
+msgstr "Գալարավարագույր"
 
 msgid "IDS_MEDIABR_BODY_DISSOLVE"
-msgstr "מתפזר"
+msgstr "Լուծել"
 
 msgid "IDS_MEDIABR_BODY_SUBTITLES"
-msgstr "כתוביות"
+msgstr "Ենթավերնագրեր"
 
 msgid "IDS_MEDIABR_BODY_5_SECONDS"
-msgstr "5 שניות"
+msgstr "5 վայրկյան"
 
 msgid "IDS_MEDIABR_BODY_10_SECONDS"
-msgstr "10 שניות"
+msgstr "10 վայրկյան"
 
 msgid "IDS_MEDIABR_BODY_20_SECONDS"
-msgstr "20 שניות"
+msgstr "20 վայրկյան"
 
 msgid "IDS_MEDIABR_MBODY_IRIS_M_EFFECT"
-msgstr "קשתית"
+msgstr "Ծիածան"
 
 msgid "IDS_MEDIABR_BODY_ACTIVATION"
-msgstr "הפעלה"
+msgstr "Ակտիվացում"
 

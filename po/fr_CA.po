@@ -1,51 +1,51 @@
 msgid "IDS_MEDIABR_OPT_SLIDE_SHOW"
-msgstr "Xem từng hình"
+msgstr "Diaporama"
 
 msgid "IDS_MEDIABR_BODY_SLIDESHOW_INTERVAL"
-msgstr "Khoảng cách Trình chiếu"
+msgstr "Intervalle du diaporama"
 
 msgid "IDS_MEDIABR_OPT_SLIDE"
-msgstr "Vuốt"
+msgstr "Diapo"
 
 msgid "IDS_MEDIABR_OPT_2_SECONDS"
-msgstr "2 giây"
+msgstr "2 secondes"
 
 msgid "IDS_MEDIABR_OPT_3_SECONDS"
-msgstr "3 giây"
+msgstr "3 secondes"
 
 msgid "IDS_MEDIABR_BODY_SHUFFLE"
-msgstr "Trộn bài"
+msgstr "Mode aléatoire"
 
 msgid "IDS_MEDIABR_BODY_REPEAT"
-msgstr "Lặp lại"
+msgstr "Répéter"
 
 msgid "IDS_MEDIABR_BODY_TRANSITION_EFFECT"
-msgstr "Hiệu ứng chuyển tiếp"
+msgstr "Effet de transition"
 
 msgid "IDS_MEDIABR_BODY_FADE"
-msgstr "Mờ dần"
+msgstr "Fondu"
 
 msgid "IDS_MEDIABR_BODY_BLIND"
-msgstr "Mù"
+msgstr "Stores vénitiens"
 
 msgid "IDS_MEDIABR_BODY_DISSOLVE"
-msgstr "Mờ"
+msgstr "Fondu enchainé"
 
 msgid "IDS_MEDIABR_BODY_SUBTITLES"
-msgstr "Phụ đề"
+msgstr "Sous-titres"
 
 msgid "IDS_MEDIABR_BODY_5_SECONDS"
-msgstr "5 giây"
+msgstr "5 secondes"
 
 msgid "IDS_MEDIABR_BODY_10_SECONDS"
-msgstr "10 giây"
+msgstr "10 secondes"
 
 msgid "IDS_MEDIABR_BODY_20_SECONDS"
-msgstr "20 giây"
+msgstr "20 secondes"
 
 msgid "IDS_MEDIABR_MBODY_IRIS_M_EFFECT"
 msgstr "Iris"
 
 msgid "IDS_MEDIABR_BODY_ACTIVATION"
-msgstr "Kích hoạt"
+msgstr "Activation"
 

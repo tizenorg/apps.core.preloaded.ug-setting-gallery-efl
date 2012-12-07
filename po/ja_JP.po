@@ -2,7 +2,7 @@ msgid "IDS_MEDIABR_OPT_SLIDE_SHOW"
 msgstr "スライドショー"
 
 msgid "IDS_MEDIABR_BODY_SLIDESHOW_INTERVAL"
-msgstr "スライド​ショー​の​間隔"
+msgstr "スライドショーの間隔"
 
 msgid "IDS_MEDIABR_OPT_SLIDE"
 msgstr "スライド"
@@ -20,7 +20,7 @@ msgid "IDS_MEDIABR_BODY_REPEAT"
 msgstr "繰り返し"
 
 msgid "IDS_MEDIABR_BODY_TRANSITION_EFFECT"
-msgstr "通過​効果"
+msgstr "通過効果"
 
 msgid "IDS_MEDIABR_BODY_FADE"
 msgstr "フェード"
