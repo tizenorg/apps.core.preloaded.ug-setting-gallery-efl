@@ -242,25 +242,27 @@ _gallery_genlist_icon_cb(void *data,  Evas_Object *obj, void *event_info)
 
 	int state = 0;
 	int index = (int )data;
+	bool bState = false;
 
 	if (index == GALLERY_MAIN_MENU_REPEAT)
 	{
-		gallery_key_init_repeat_state(&state);
+		bState = elm_check_state_get(ugd->repeat_btn);
 
-		if (gallery_key_set_repeat_state(!state))
+		if (gallery_key_set_repeat_state(bState))
 		{
 			gallery_key_text_popup(ugd,SGUG_TR_FAILED);
 		}
 	}
 	else if(index == GALLERY_MAIN_MENU_SHUFFLE)
 	{
-		gallery_key_init_shuffle_state(&state);
+		bState = elm_check_state_get(ugd->shuffle_btn);
 
-		if(gallery_key_set_shuffle_state(!state))
+		if(gallery_key_set_shuffle_state(bState))
 		{
 			gallery_key_text_popup(ugd,SGUG_TR_FAILED);
 		}
 	}
+
 }
 
 static Evas_Object *_gallery_create_check(Evas_Object *obj, struct ug_data *ugd, int index, Init_State_Func func, int *state)
@@ -301,12 +303,14 @@ _gallery_genlist_icon_get(void *data, Evas_Object *obj, const char *part)
 	{
 		if (index == GALLERY_MAIN_MENU_REPEAT)
 		{
-			check = _gallery_create_check(obj, ugd, index, gallery_key_init_repeat_state, &ugd->repeat_state);
+			ugd->repeat_state = (int)gallery_key_get_repeat_state();
+			check = _gallery_create_check(obj, ugd, index, NULL, &ugd->repeat_state);
 			ugd->repeat_btn = check;
 		}
 		else if(index == GALLERY_MAIN_MENU_SHUFFLE)
 		{
-			check = _gallery_create_check(obj, ugd, index, gallery_key_init_shuffle_state, &ugd->shuffle_state);
+			ugd->shuffle_state = (int)gallery_key_get_shuffle_state();
+			check = _gallery_create_check(obj, ugd, index, NULL, &ugd->shuffle_state);
 			ugd->shuffle_btn = check;
 		}
 	}
@@ -457,8 +461,8 @@ _gallery_genlist_select_cb(void *data, Evas_Object *obj, void *event_info)
 
 	int param = (int )data;
 
-	int icon_state = 0;
 	bool expand_state = false;
+	bool bState = false;
 
 	Elm_Object_Item *item = (Elm_Object_Item *)event_info;
 
@@ -471,27 +475,25 @@ _gallery_genlist_select_cb(void *data, Evas_Object *obj, void *event_info)
 	}
 	else if(param == GALLERY_MAIN_MENU_REPEAT)
 	{
-		gallery_key_init_repeat_state(&icon_state);
-		icon_state = !icon_state;
+		bState = !gallery_key_get_repeat_state();
 
-		if(gallery_key_set_repeat_state(icon_state))
+		if (gallery_key_set_repeat_state(bState))
 		{
 			gallery_key_text_popup(ugd,SGUG_TR_FAILED);
 		}
 
-		elm_check_state_set(ugd->repeat_btn, (bool)icon_state);
+		elm_check_state_set(ugd->repeat_btn, bState);
 	}
 	else if(param == GALLERY_MAIN_MENU_SHUFFLE)
 	{
-		gallery_key_init_shuffle_state(&icon_state);
-		icon_state = !icon_state;
+		bState = !gallery_key_get_shuffle_state();
 
-		if(gallery_key_set_shuffle_state(icon_state))
+		if(gallery_key_set_shuffle_state(bState))
 		{
 			gallery_key_text_popup(ugd,SGUG_TR_FAILED);
 		}
 
-		elm_check_state_set(ugd->shuffle_btn,(bool)icon_state);
+		elm_check_state_set(ugd->shuffle_btn,bState);
 	}
 }
 
@@ -513,6 +515,7 @@ _gallery_genlist_items_add (Evas_Object *parent, struct ug_data *ugd)
 
 	evas_object_size_hint_weight_set(main_genlist, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
 	evas_object_size_hint_align_set(main_genlist, EVAS_HINT_FILL, EVAS_HINT_FILL);
+	evas_object_propagate_events_set(main_genlist, EINA_FALSE);
 
 	ugd->genlist = main_genlist;
 

@@ -200,4 +200,29 @@ gallery_key_set_shuffle_state(bool value)
 	return 0;
 }
 
+bool
+gallery_key_get_repeat_state()
+{
+	int value = 0;
+	if(vconf_get_bool(VCONFKEY_GALLERY_REPEAT_STATE, &value))
+	{
+		gallery_error("vconf_set_bool:repeat state failed");
+		return false;
+	}
+
+	return (value == 1 ? true : false);
+}
+
+bool
+gallery_key_get_shuffle_state()
+{
+	int value = 0;
+	if(vconf_get_bool(VCONFKEY_GALLERY_SHUFFLE_STATE, &value))
+	{
+		gallery_error("vconf_set_bool:shuffle state failed");
+		return false;
+	}
+
+	return (value == 1 ? true : false);
+}
 
