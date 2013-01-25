@@ -18,7 +18,7 @@
 #define UG_MODULE_API __attribute__ ((visibility("default")))
 #endif
 
-#define USE_DIALOGUE_STYLE	// new style has bug
+//#define USE_DIALOGUE_STYLE	// new style has bug
 
 #include <stdio.h>
 #include <stdbool.h>
@@ -411,6 +411,19 @@ _gallery_genlist_realized(void *data, Evas_Object *obj, void *event_info)
 
 	Elm_Object_Item *item = (Elm_Object_Item *)event_info;
 
+	int i = 0;
+	for(i=0; i<GALLERY_MAIN_MENU_ITEM_MAX; i++)
+	{
+		if(ugd->gl_it[i] == item)
+			break;
+	}
+	if(i == GALLERY_MAIN_MENU_ITEM_MAX)
+	{
+		gallery_info("extended style");
+		elm_object_item_signal_emit(item, "elm,state,center", "");
+		return;
+	}
+
 	int index = (int)elm_object_item_data_get(item);
 
 	if(index-1 == GALLERY_MAIN_MENU_TITLE)
@@ -545,13 +558,13 @@ _gallery_genlist_items_add (Evas_Object *parent, struct ug_data *ugd)
 	ugd->two_txt_icon_itc.func.state_get = NULL;
 	ugd->two_txt_icon_itc.func.del = NULL;
 
-	ugd->seperator_itc.item_style = "grouptitle.dialogue.seperator";
+	ugd->seperator_itc.item_style = "dialogue/separator";
 	ugd->seperator_itc.func.text_get = NULL;
 	ugd->seperator_itc.func.content_get = NULL;
 	ugd->seperator_itc.func.state_get = NULL;
 	ugd->seperator_itc.func.del = NULL;
 
-	ugd->seperator_end_itc.item_style = "dialogue/separator/end";
+	ugd->seperator_end_itc.item_style = "dialogue/separator";
 	ugd->seperator_end_itc.func.text_get = NULL;
 	ugd->seperator_end_itc.func.content_get = NULL;
 	ugd->seperator_end_itc.func.state_get = NULL;
