@@ -1,0 +1,51 @@
+msgid "IDS_MEDIABR_OPT_SLIDE_SHOW"
+msgstr "Слайд-шоу"
+
+msgid "IDS_MEDIABR_BODY_SLIDESHOW_INTERVAL"
+msgstr "Інтервал слайд-шоу"
+
+msgid "IDS_MEDIABR_OPT_SLIDE"
+msgstr "Слайд"
+
+msgid "IDS_MEDIABR_OPT_2_SECONDS"
+msgstr "2 секунди"
+
+msgid "IDS_MEDIABR_OPT_3_SECONDS"
+msgstr "3 секунди"
+
+msgid "IDS_MEDIABR_BODY_SHUFFLE"
+msgstr "Випадковий порядок"
+
+msgid "IDS_MEDIABR_BODY_REPEAT"
+msgstr "Повторення"
+
+msgid "IDS_MEDIABR_BODY_TRANSITION_EFFECT"
+msgstr "Ефект переходу"
+
+msgid "IDS_MEDIABR_BODY_FADE"
+msgstr "Загасання"
+
+msgid "IDS_MEDIABR_BODY_BLIND"
+msgstr "Жалюзі"
+
+msgid "IDS_MEDIABR_BODY_DISSOLVE"
+msgstr "Розчинення"
+
+msgid "IDS_MEDIABR_BODY_SUBTITLES"
+msgstr "Субтитри"
+
+msgid "IDS_MEDIABR_BODY_5_SECONDS"
+msgstr "5 секунд"
+
+msgid "IDS_MEDIABR_BODY_10_SECONDS"
+msgstr "10 секунд"
+
+msgid "IDS_MEDIABR_BODY_20_SECONDS"
+msgstr "20 секунд"
+
+msgid "IDS_MEDIABR_MBODY_IRIS_M_EFFECT"
+msgstr "Ірісова діафрагма"
+
+msgid "IDS_MEDIABR_BODY_ACTIVATION"
+msgstr "Активація"
+

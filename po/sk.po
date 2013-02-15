@@ -1,0 +1,51 @@
+msgid "IDS_MEDIABR_OPT_SLIDE_SHOW"
+msgstr "Prezentácia"
+
+msgid "IDS_MEDIABR_BODY_SLIDESHOW_INTERVAL"
+msgstr "Interval prezentácie"
+
+msgid "IDS_MEDIABR_OPT_SLIDE"
+msgstr "Vysunutie"
+
+msgid "IDS_MEDIABR_OPT_2_SECONDS"
+msgstr "2 sekundy"
+
+msgid "IDS_MEDIABR_OPT_3_SECONDS"
+msgstr "3 sekundy"
+
+msgid "IDS_MEDIABR_BODY_SHUFFLE"
+msgstr "Náhodné poradie"
+
+msgid "IDS_MEDIABR_BODY_REPEAT"
+msgstr "Opakovať"
+
+msgid "IDS_MEDIABR_BODY_TRANSITION_EFFECT"
+msgstr "Efekt prechodu"
+
+msgid "IDS_MEDIABR_BODY_FADE"
+msgstr "Stmievanie"
+
+msgid "IDS_MEDIABR_BODY_BLIND"
+msgstr "Roleta"
+
+msgid "IDS_MEDIABR_BODY_DISSOLVE"
+msgstr "Prelínanie"
+
+msgid "IDS_MEDIABR_BODY_SUBTITLES"
+msgstr "Titulky"
+
+msgid "IDS_MEDIABR_BODY_5_SECONDS"
+msgstr "5 sekúnd"
+
+msgid "IDS_MEDIABR_BODY_10_SECONDS"
+msgstr "10 sekúnd"
+
+msgid "IDS_MEDIABR_BODY_20_SECONDS"
+msgstr "20 sekúnd"
+
+msgid "IDS_MEDIABR_MBODY_IRIS_M_EFFECT"
+msgstr "Clona"
+
+msgid "IDS_MEDIABR_BODY_ACTIVATION"
+msgstr "Aktivácia"
+

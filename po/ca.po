@@ -1,0 +1,51 @@
+msgid "IDS_MEDIABR_OPT_SLIDE_SHOW"
+msgstr "Presentació de diapositives"
+
+msgid "IDS_MEDIABR_BODY_SLIDESHOW_INTERVAL"
+msgstr "Interval de la presentació de diapositives"
+
+msgid "IDS_MEDIABR_OPT_SLIDE"
+msgstr "Diapositiva"
+
+msgid "IDS_MEDIABR_OPT_2_SECONDS"
+msgstr "2 segons"
+
+msgid "IDS_MEDIABR_OPT_3_SECONDS"
+msgstr "3 segons"
+
+msgid "IDS_MEDIABR_BODY_SHUFFLE"
+msgstr "Ordre aleatori"
+
+msgid "IDS_MEDIABR_BODY_REPEAT"
+msgstr "Repetir"
+
+msgid "IDS_MEDIABR_BODY_TRANSITION_EFFECT"
+msgstr "Efecte de transició"
+
+msgid "IDS_MEDIABR_BODY_FADE"
+msgstr "Perdre intensitat"
+
+msgid "IDS_MEDIABR_BODY_BLIND"
+msgstr "Persiana"
+
+msgid "IDS_MEDIABR_BODY_DISSOLVE"
+msgstr "Dissoldre"
+
+msgid "IDS_MEDIABR_BODY_SUBTITLES"
+msgstr "Subtítols"
+
+msgid "IDS_MEDIABR_BODY_5_SECONDS"
+msgstr "5 segons"
+
+msgid "IDS_MEDIABR_BODY_10_SECONDS"
+msgstr "10 segons"
+
+msgid "IDS_MEDIABR_BODY_20_SECONDS"
+msgstr "20 segons"
+
+msgid "IDS_MEDIABR_MBODY_IRIS_M_EFFECT"
+msgstr "Iris"
+
+msgid "IDS_MEDIABR_BODY_ACTIVATION"
+msgstr "Activació"
+

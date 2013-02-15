@@ -1,0 +1,51 @@
+msgid "IDS_MEDIABR_OPT_SLIDE_SHOW"
+msgstr "Taispeántas sleamhnán"
+
+msgid "IDS_MEDIABR_BODY_SLIDESHOW_INTERVAL"
+msgstr "Eatramh taispeántais sleamhnán"
+
+msgid "IDS_MEDIABR_OPT_SLIDE"
+msgstr "Sleamhnán"
+
+msgid "IDS_MEDIABR_OPT_2_SECONDS"
+msgstr "2 shoicind"
+
+msgid "IDS_MEDIABR_OPT_3_SECONDS"
+msgstr "3 shoicind"
+
+msgid "IDS_MEDIABR_BODY_SHUFFLE"
+msgstr "Suaitheadh"
+
+msgid "IDS_MEDIABR_BODY_REPEAT"
+msgstr "Déan arís"
+
+msgid "IDS_MEDIABR_BODY_TRANSITION_EFFECT"
+msgstr "Maisíocht trasdula"
+
+msgid "IDS_MEDIABR_BODY_FADE"
+msgstr "Céimnigh"
+
+msgid "IDS_MEDIABR_BODY_BLIND"
+msgstr "Dallóg"
+
+msgid "IDS_MEDIABR_BODY_DISSOLVE"
+msgstr "Leáigh"
+
+msgid "IDS_MEDIABR_BODY_SUBTITLES"
+msgstr "Fotheidil"
+
+msgid "IDS_MEDIABR_BODY_5_SECONDS"
+msgstr "5 shoicind"
+
+msgid "IDS_MEDIABR_BODY_10_SECONDS"
+msgstr "10 soicind"
+
+msgid "IDS_MEDIABR_BODY_20_SECONDS"
+msgstr "20 soicind"
+
+msgid "IDS_MEDIABR_MBODY_IRIS_M_EFFECT"
+msgstr "Feileastram"
+
+msgid "IDS_MEDIABR_BODY_ACTIVATION"
+msgstr "Gníomhachtú"
+

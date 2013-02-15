@@ -1,0 +1,51 @@
+msgid "IDS_MEDIABR_OPT_SLIDE_SHOW"
+msgstr "Diaesitys"
+
+msgid "IDS_MEDIABR_BODY_SLIDESHOW_INTERVAL"
+msgstr "Kuvaesityksen aikaväli"
+
+msgid "IDS_MEDIABR_OPT_SLIDE"
+msgstr "Dia"
+
+msgid "IDS_MEDIABR_OPT_2_SECONDS"
+msgstr "2 sekuntia"
+
+msgid "IDS_MEDIABR_OPT_3_SECONDS"
+msgstr "3 sekuntia"
+
+msgid "IDS_MEDIABR_BODY_SHUFFLE"
+msgstr "Sekoitus"
+
+msgid "IDS_MEDIABR_BODY_REPEAT"
+msgstr "Toista"
+
+msgid "IDS_MEDIABR_BODY_TRANSITION_EFFECT"
+msgstr "Siirtymätehoste"
+
+msgid "IDS_MEDIABR_BODY_FADE"
+msgstr "Häivytä"
+
+msgid "IDS_MEDIABR_BODY_BLIND"
+msgstr "Kaihdin"
+
+msgid "IDS_MEDIABR_BODY_DISSOLVE"
+msgstr "Ristikuva"
+
+msgid "IDS_MEDIABR_BODY_SUBTITLES"
+msgstr "Tekstitys"
+
+msgid "IDS_MEDIABR_BODY_5_SECONDS"
+msgstr "5 sekuntia"
+
+msgid "IDS_MEDIABR_BODY_10_SECONDS"
+msgstr "10 sekuntia"
+
+msgid "IDS_MEDIABR_BODY_20_SECONDS"
+msgstr "20 sekuntia"
+
+msgid "IDS_MEDIABR_MBODY_IRIS_M_EFFECT"
+msgstr "Iris"
+
+msgid "IDS_MEDIABR_BODY_ACTIVATION"
+msgstr "Aktivointi"
+

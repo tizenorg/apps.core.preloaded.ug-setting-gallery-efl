@@ -1,0 +1,51 @@
+msgid "IDS_MEDIABR_OPT_SLIDE_SHOW"
+msgstr "Bildspel"
+
+msgid "IDS_MEDIABR_BODY_SLIDESHOW_INTERVAL"
+msgstr "Bildspelsintervall"
+
+msgid "IDS_MEDIABR_OPT_SLIDE"
+msgstr "Bild"
+
+msgid "IDS_MEDIABR_OPT_2_SECONDS"
+msgstr "2 sekunder"
+
+msgid "IDS_MEDIABR_OPT_3_SECONDS"
+msgstr "3 sekunder"
+
+msgid "IDS_MEDIABR_BODY_SHUFFLE"
+msgstr "Blanda"
+
+msgid "IDS_MEDIABR_BODY_REPEAT"
+msgstr "Upprepa"
+
+msgid "IDS_MEDIABR_BODY_TRANSITION_EFFECT"
+msgstr "Övergångseffekt"
+
+msgid "IDS_MEDIABR_BODY_FADE"
+msgstr "Tona"
+
+msgid "IDS_MEDIABR_BODY_BLIND"
+msgstr "Fördragning"
+
+msgid "IDS_MEDIABR_BODY_DISSOLVE"
+msgstr "Lös upp"
+
+msgid "IDS_MEDIABR_BODY_SUBTITLES"
+msgstr "Textning"
+
+msgid "IDS_MEDIABR_BODY_5_SECONDS"
+msgstr "5 sekunder"
+
+msgid "IDS_MEDIABR_BODY_10_SECONDS"
+msgstr "10 sekunder"
+
+msgid "IDS_MEDIABR_BODY_20_SECONDS"
+msgstr "20 sekunder"
+
+msgid "IDS_MEDIABR_MBODY_IRIS_M_EFFECT"
+msgstr "Iris"
+
+msgid "IDS_MEDIABR_BODY_ACTIVATION"
+msgstr "Aktivera"
+

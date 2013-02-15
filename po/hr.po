@@ -1,0 +1,51 @@
+msgid "IDS_MEDIABR_OPT_SLIDE_SHOW"
+msgstr "Prezentacija"
+
+msgid "IDS_MEDIABR_BODY_SLIDESHOW_INTERVAL"
+msgstr "Interval prezentacije"
+
+msgid "IDS_MEDIABR_OPT_SLIDE"
+msgstr "Listanje"
+
+msgid "IDS_MEDIABR_OPT_2_SECONDS"
+msgstr "2 sek"
+
+msgid "IDS_MEDIABR_OPT_3_SECONDS"
+msgstr "3 sek"
+
+msgid "IDS_MEDIABR_BODY_SHUFFLE"
+msgstr "Nasumično"
+
+msgid "IDS_MEDIABR_BODY_REPEAT"
+msgstr "Ponavljanje"
+
+msgid "IDS_MEDIABR_BODY_TRANSITION_EFFECT"
+msgstr "Efekt prijelaza"
+
+msgid "IDS_MEDIABR_BODY_FADE"
+msgstr "Zatamni"
+
+msgid "IDS_MEDIABR_BODY_BLIND"
+msgstr "Roleta"
+
+msgid "IDS_MEDIABR_BODY_DISSOLVE"
+msgstr "Razrijedi"
+
+msgid "IDS_MEDIABR_BODY_SUBTITLES"
+msgstr "Titlovi"
+
+msgid "IDS_MEDIABR_BODY_5_SECONDS"
+msgstr "5 sek"
+
+msgid "IDS_MEDIABR_BODY_10_SECONDS"
+msgstr "10 sek"
+
+msgid "IDS_MEDIABR_BODY_20_SECONDS"
+msgstr "20 sek"
+
+msgid "IDS_MEDIABR_MBODY_IRIS_M_EFFECT"
+msgstr "Iris"
+
+msgid "IDS_MEDIABR_BODY_ACTIVATION"
+msgstr "Uključivanje"
+
