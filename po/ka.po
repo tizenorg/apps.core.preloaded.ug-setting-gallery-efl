@@ -1,0 +1,51 @@
+msgid "IDS_MEDIABR_OPT_SLIDE_SHOW"
+msgstr "სლაიდშოუ"
+
+msgid "IDS_MEDIABR_BODY_SLIDESHOW_INTERVAL"
+msgstr "სლაიდ–შოუს ინტერვალი"
+
+msgid "IDS_MEDIABR_OPT_SLIDE"
+msgstr "სლაიდი"
+
+msgid "IDS_MEDIABR_OPT_2_SECONDS"
+msgstr "2 წამი"
+
+msgid "IDS_MEDIABR_OPT_3_SECONDS"
+msgstr "3 წამი"
+
+msgid "IDS_MEDIABR_BODY_SHUFFLE"
+msgstr "გადანაცვლება"
+
+msgid "IDS_MEDIABR_BODY_REPEAT"
+msgstr "გამეორება"
+
+msgid "IDS_MEDIABR_BODY_TRANSITION_EFFECT"
+msgstr "გადასვლის ეფექტი"
+
+msgid "IDS_MEDIABR_BODY_FADE"
+msgstr "ნელ-ნელა ჩაქრობა"
+
+msgid "IDS_MEDIABR_BODY_BLIND"
+msgstr "დაბინდვა"
+
+msgid "IDS_MEDIABR_BODY_DISSOLVE"
+msgstr "თანდათან გაქრობა"
+
+msgid "IDS_MEDIABR_BODY_SUBTITLES"
+msgstr "სუბტიტრები"
+
+msgid "IDS_MEDIABR_BODY_5_SECONDS"
+msgstr "5 წამი"
+
+msgid "IDS_MEDIABR_BODY_10_SECONDS"
+msgstr "10 წამი"
+
+msgid "IDS_MEDIABR_BODY_20_SECONDS"
+msgstr "20 წამი"
+
+msgid "IDS_MEDIABR_MBODY_IRIS_M_EFFECT"
+msgstr "ირისი"
+
+msgid "IDS_MEDIABR_BODY_ACTIVATION"
+msgstr "გააქტიურება"
+

@@ -1,0 +1,51 @@
+msgid "IDS_MEDIABR_OPT_SLIDE_SHOW"
+msgstr "Slayd göstərmə"
+
+msgid "IDS_MEDIABR_BODY_SLIDESHOW_INTERVAL"
+msgstr "Slaydşou intervalı"
+
+msgid "IDS_MEDIABR_OPT_SLIDE"
+msgstr "Slayd"
+
+msgid "IDS_MEDIABR_OPT_2_SECONDS"
+msgstr "2 saniyə"
+
+msgid "IDS_MEDIABR_OPT_3_SECONDS"
+msgstr "3 saniyə"
+
+msgid "IDS_MEDIABR_BODY_SHUFFLE"
+msgstr "Təsadüfi sıralama"
+
+msgid "IDS_MEDIABR_BODY_REPEAT"
+msgstr "Təkrar et"
+
+msgid "IDS_MEDIABR_BODY_TRANSITION_EFFECT"
+msgstr "Keçid effekti"
+
+msgid "IDS_MEDIABR_BODY_FADE"
+msgstr "Tutqunlaşdır"
+
+msgid "IDS_MEDIABR_BODY_BLIND"
+msgstr "Sayrışmaq"
+
+msgid "IDS_MEDIABR_BODY_DISSOLVE"
+msgstr "Seç"
+
+msgid "IDS_MEDIABR_BODY_SUBTITLES"
+msgstr "Yarımbaşlıqlar"
+
+msgid "IDS_MEDIABR_BODY_5_SECONDS"
+msgstr "5 saniyə"
+
+msgid "IDS_MEDIABR_BODY_10_SECONDS"
+msgstr "10 saniyə"
+
+msgid "IDS_MEDIABR_BODY_20_SECONDS"
+msgstr "20 saniyə"
+
+msgid "IDS_MEDIABR_MBODY_IRIS_M_EFFECT"
+msgstr "Diafraqma"
+
+msgid "IDS_MEDIABR_BODY_ACTIVATION"
+msgstr "Aktivləşdirmə"
+

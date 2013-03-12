@@ -1,0 +1,51 @@
+msgid "IDS_MEDIABR_OPT_SLIDE_SHOW"
+msgstr "Παρουσίαση"
+
+msgid "IDS_MEDIABR_BODY_SLIDESHOW_INTERVAL"
+msgstr "Διάστημα παρουσίασης"
+
+msgid "IDS_MEDIABR_OPT_SLIDE"
+msgstr "Διαφάνεια"
+
+msgid "IDS_MEDIABR_OPT_2_SECONDS"
+msgstr "2 δευτερόλεπτα"
+
+msgid "IDS_MEDIABR_OPT_3_SECONDS"
+msgstr "3 δευτερόλεπτα"
+
+msgid "IDS_MEDIABR_BODY_SHUFFLE"
+msgstr "Τυχαία σειρά"
+
+msgid "IDS_MEDIABR_BODY_REPEAT"
+msgstr "Επανάληψη"
+
+msgid "IDS_MEDIABR_BODY_TRANSITION_EFFECT"
+msgstr "Εφέ μετάβασης"
+
+msgid "IDS_MEDIABR_BODY_FADE"
+msgstr "Σταδιακή εμφάνιση"
+
+msgid "IDS_MEDIABR_BODY_BLIND"
+msgstr "Ρολό"
+
+msgid "IDS_MEDIABR_BODY_DISSOLVE"
+msgstr "Αποσύνθεση"
+
+msgid "IDS_MEDIABR_BODY_SUBTITLES"
+msgstr "Υπότιτλοι"
+
+msgid "IDS_MEDIABR_BODY_5_SECONDS"
+msgstr "5 δευτερόλεπτα"
+
+msgid "IDS_MEDIABR_BODY_10_SECONDS"
+msgstr "10 δευτερόλεπτα"
+
+msgid "IDS_MEDIABR_BODY_20_SECONDS"
+msgstr "20 δευτερόλεπτα"
+
+msgid "IDS_MEDIABR_MBODY_IRIS_M_EFFECT"
+msgstr "Ίριδα"
+
+msgid "IDS_MEDIABR_BODY_ACTIVATION"
+msgstr "Ενεργοποίηση"
+

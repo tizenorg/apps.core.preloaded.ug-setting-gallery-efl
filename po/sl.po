@@ -1,0 +1,51 @@
+msgid "IDS_MEDIABR_OPT_SLIDE_SHOW"
+msgstr "Diaprojekcija"
+
+msgid "IDS_MEDIABR_BODY_SLIDESHOW_INTERVAL"
+msgstr "Interval diaprojekcije"
+
+msgid "IDS_MEDIABR_OPT_SLIDE"
+msgstr "Prehod"
+
+msgid "IDS_MEDIABR_OPT_2_SECONDS"
+msgstr "2 sekundi"
+
+msgid "IDS_MEDIABR_OPT_3_SECONDS"
+msgstr "3 sekunde"
+
+msgid "IDS_MEDIABR_BODY_SHUFFLE"
+msgstr "Naključno"
+
+msgid "IDS_MEDIABR_BODY_REPEAT"
+msgstr "Ponovi"
+
+msgid "IDS_MEDIABR_BODY_TRANSITION_EFFECT"
+msgstr "Učinek prehoda"
+
+msgid "IDS_MEDIABR_BODY_FADE"
+msgstr "Zatemnitev"
+
+msgid "IDS_MEDIABR_BODY_BLIND"
+msgstr "Zastor"
+
+msgid "IDS_MEDIABR_BODY_DISSOLVE"
+msgstr "Raztopi"
+
+msgid "IDS_MEDIABR_BODY_SUBTITLES"
+msgstr "Podnapisi"
+
+msgid "IDS_MEDIABR_BODY_5_SECONDS"
+msgstr "5 sekund"
+
+msgid "IDS_MEDIABR_BODY_10_SECONDS"
+msgstr "10 sekund"
+
+msgid "IDS_MEDIABR_BODY_20_SECONDS"
+msgstr "20 sekund"
+
+msgid "IDS_MEDIABR_MBODY_IRIS_M_EFFECT"
+msgstr "Mavrica"
+
+msgid "IDS_MEDIABR_BODY_ACTIVATION"
+msgstr "Vklop"
+

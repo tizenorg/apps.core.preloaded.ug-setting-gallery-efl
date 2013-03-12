@@ -1,0 +1,51 @@
+msgid "IDS_MEDIABR_OPT_SLIDE_SHOW"
+msgstr "Glærusýning"
+
+msgid "IDS_MEDIABR_BODY_SLIDESHOW_INTERVAL"
+msgstr "Tími milli mynda"
+
+msgid "IDS_MEDIABR_OPT_SLIDE"
+msgstr "Glæra"
+
+msgid "IDS_MEDIABR_OPT_2_SECONDS"
+msgstr "2 sekúndur"
+
+msgid "IDS_MEDIABR_OPT_3_SECONDS"
+msgstr "3 sekúndur"
+
+msgid "IDS_MEDIABR_BODY_SHUFFLE"
+msgstr "Stokka"
+
+msgid "IDS_MEDIABR_BODY_REPEAT"
+msgstr "Endurtaka"
+
+msgid "IDS_MEDIABR_BODY_TRANSITION_EFFECT"
+msgstr "Skipting"
+
+msgid "IDS_MEDIABR_BODY_FADE"
+msgstr "Lækka"
+
+msgid "IDS_MEDIABR_BODY_BLIND"
+msgstr "Rimlagardína"
+
+msgid "IDS_MEDIABR_BODY_DISSOLVE"
+msgstr "Leysa upp"
+
+msgid "IDS_MEDIABR_BODY_SUBTITLES"
+msgstr "Texti"
+
+msgid "IDS_MEDIABR_BODY_5_SECONDS"
+msgstr "5 sekúndur"
+
+msgid "IDS_MEDIABR_BODY_10_SECONDS"
+msgstr "10 sekúndur"
+
+msgid "IDS_MEDIABR_BODY_20_SECONDS"
+msgstr "20 sekúndur"
+
+msgid "IDS_MEDIABR_MBODY_IRIS_M_EFFECT"
+msgstr "Augasteinn"
+
+msgid "IDS_MEDIABR_BODY_ACTIVATION"
+msgstr "Virkjun"
+

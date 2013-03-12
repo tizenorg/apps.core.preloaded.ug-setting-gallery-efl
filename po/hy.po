@@ -1,0 +1,51 @@
+msgid "IDS_MEDIABR_OPT_SLIDE_SHOW"
+msgstr "Սլայդ շոու"
+
+msgid "IDS_MEDIABR_BODY_SLIDESHOW_INTERVAL"
+msgstr "Սահկահանդեսի միջակայքը"
+
+msgid "IDS_MEDIABR_OPT_SLIDE"
+msgstr "Սլայդ"
+
+msgid "IDS_MEDIABR_OPT_2_SECONDS"
+msgstr "2 վայրկյան"
+
+msgid "IDS_MEDIABR_OPT_3_SECONDS"
+msgstr "3  վայրկյան"
+
+msgid "IDS_MEDIABR_BODY_SHUFFLE"
+msgstr "Պատահական"
+
+msgid "IDS_MEDIABR_BODY_REPEAT"
+msgstr "Կրկնել"
+
+msgid "IDS_MEDIABR_BODY_TRANSITION_EFFECT"
+msgstr "Փոխանցման էֆեկտ"
+
+msgid "IDS_MEDIABR_BODY_FADE"
+msgstr "Անհետացող"
+
+msgid "IDS_MEDIABR_BODY_BLIND"
+msgstr "Գալարավարագույր"
+
+msgid "IDS_MEDIABR_BODY_DISSOLVE"
+msgstr "Լուծել"
+
+msgid "IDS_MEDIABR_BODY_SUBTITLES"
+msgstr "Ենթավերնագրեր"
+
+msgid "IDS_MEDIABR_BODY_5_SECONDS"
+msgstr "5 վայրկյան"
+
+msgid "IDS_MEDIABR_BODY_10_SECONDS"
+msgstr "10 վայրկյան"
+
+msgid "IDS_MEDIABR_BODY_20_SECONDS"
+msgstr "20 վայրկյան"
+
+msgid "IDS_MEDIABR_MBODY_IRIS_M_EFFECT"
+msgstr "Ծիածան"
+
+msgid "IDS_MEDIABR_BODY_ACTIVATION"
+msgstr "Ակտիվացում"
+

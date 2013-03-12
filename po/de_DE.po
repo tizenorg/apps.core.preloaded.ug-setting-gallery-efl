@@ -1,0 +1,51 @@
+msgid "IDS_MEDIABR_OPT_SLIDE_SHOW"
+msgstr "Diashow"
+
+msgid "IDS_MEDIABR_BODY_SLIDESHOW_INTERVAL"
+msgstr "Diashowintervall"
+
+msgid "IDS_MEDIABR_OPT_SLIDE"
+msgstr "Gleiten"
+
+msgid "IDS_MEDIABR_OPT_2_SECONDS"
+msgstr "2 Sekunden"
+
+msgid "IDS_MEDIABR_OPT_3_SECONDS"
+msgstr "3 Sekunden"
+
+msgid "IDS_MEDIABR_BODY_SHUFFLE"
+msgstr "Zufallswiedergabe"
+
+msgid "IDS_MEDIABR_BODY_REPEAT"
+msgstr "Wiederholen"
+
+msgid "IDS_MEDIABR_BODY_TRANSITION_EFFECT"
+msgstr "Übergangseffekt"
+
+msgid "IDS_MEDIABR_BODY_FADE"
+msgstr "Ausblenden"
+
+msgid "IDS_MEDIABR_BODY_BLIND"
+msgstr "Blenden"
+
+msgid "IDS_MEDIABR_BODY_DISSOLVE"
+msgstr "Auflösen"
+
+msgid "IDS_MEDIABR_BODY_SUBTITLES"
+msgstr "Untertitel"
+
+msgid "IDS_MEDIABR_BODY_5_SECONDS"
+msgstr "5 Sekunden"
+
+msgid "IDS_MEDIABR_BODY_10_SECONDS"
+msgstr "10 Sekunden"
+
+msgid "IDS_MEDIABR_BODY_20_SECONDS"
+msgstr "20 Sekunden"
+
+msgid "IDS_MEDIABR_MBODY_IRIS_M_EFFECT"
+msgstr "Iris"
+
+msgid "IDS_MEDIABR_BODY_ACTIVATION"
+msgstr "Aktivierung"
+

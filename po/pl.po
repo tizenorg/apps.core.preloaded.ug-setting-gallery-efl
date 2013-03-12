@@ -1,0 +1,51 @@
+msgid "IDS_MEDIABR_OPT_SLIDE_SHOW"
+msgstr "Pokaz slajdów"
+
+msgid "IDS_MEDIABR_BODY_SLIDESHOW_INTERVAL"
+msgstr "Interwał pokazu slajdów"
+
+msgid "IDS_MEDIABR_OPT_SLIDE"
+msgstr "Slajd"
+
+msgid "IDS_MEDIABR_OPT_2_SECONDS"
+msgstr "2 sek."
+
+msgid "IDS_MEDIABR_OPT_3_SECONDS"
+msgstr "3 sek."
+
+msgid "IDS_MEDIABR_BODY_SHUFFLE"
+msgstr "Kolejność losowa"
+
+msgid "IDS_MEDIABR_BODY_REPEAT"
+msgstr "Powtórz"
+
+msgid "IDS_MEDIABR_BODY_TRANSITION_EFFECT"
+msgstr "Efekt przejścia menu"
+
+msgid "IDS_MEDIABR_BODY_FADE"
+msgstr "Zanikanie"
+
+msgid "IDS_MEDIABR_BODY_BLIND"
+msgstr "Zasłona"
+
+msgid "IDS_MEDIABR_BODY_DISSOLVE"
+msgstr "Przenikanie"
+
+msgid "IDS_MEDIABR_BODY_SUBTITLES"
+msgstr "Napisy"
+
+msgid "IDS_MEDIABR_BODY_5_SECONDS"
+msgstr "5 sek."
+
+msgid "IDS_MEDIABR_BODY_10_SECONDS"
+msgstr "10 sek."
+
+msgid "IDS_MEDIABR_BODY_20_SECONDS"
+msgstr "20 sek."
+
+msgid "IDS_MEDIABR_MBODY_IRIS_M_EFFECT"
+msgstr "Koło"
+
+msgid "IDS_MEDIABR_BODY_ACTIVATION"
+msgstr "Aktywacja"
+
