@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *	  http://floralicense.org/license/
+ *	  http://www.tizenopensource.org/license
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -200,29 +200,4 @@ gallery_key_set_shuffle_state(bool value)
 	return 0;
 }
 
-bool
-gallery_key_get_repeat_state()
-{
-	int value = 0;
-	if(vconf_get_bool(VCONFKEY_GALLERY_REPEAT_STATE, &value))
-	{
-		gallery_error("vconf_set_bool:repeat state failed");
-		return false;
-	}
-
-	return (value == 1 ? true : false);
-}
-
-bool
-gallery_key_get_shuffle_state()
-{
-	int value = 0;
-	if(vconf_get_bool(VCONFKEY_GALLERY_SHUFFLE_STATE, &value))
-	{
-		gallery_error("vconf_set_bool:shuffle state failed");
-		return false;
-	}
-
-	return (value == 1 ? true : false);
-}
 

@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *	  http://floralicense.org/license/
+ *	  http://www.tizenopensource.org/license
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -18,7 +18,7 @@
 #define UG_MODULE_API __attribute__ ((visibility("default")))
 #endif
 
-//#define USE_DIALOGUE_STYLE	// new style has bug
+#define USE_DIALOGUE_STYLE	// new style has bug
 
 #include <stdio.h>
 #include <stdbool.h>
@@ -242,27 +242,25 @@ _gallery_genlist_icon_cb(void *data,  Evas_Object *obj, void *event_info)
 
 	int state = 0;
 	int index = (int )data;
-	bool bState = false;
 
 	if (index == GALLERY_MAIN_MENU_REPEAT)
 	{
-		bState = elm_check_state_get(ugd->repeat_btn);
+		gallery_key_init_repeat_state(&state);
 
-		if (gallery_key_set_repeat_state(bState))
+		if (gallery_key_set_repeat_state(!state))
 		{
 			gallery_key_text_popup(ugd,SGUG_TR_FAILED);
 		}
 	}
 	else if(index == GALLERY_MAIN_MENU_SHUFFLE)
 	{
-		bState = elm_check_state_get(ugd->shuffle_btn);
+		gallery_key_init_shuffle_state(&state);
 
-		if(gallery_key_set_shuffle_state(bState))
+		if(gallery_key_set_shuffle_state(!state))
 		{
 			gallery_key_text_popup(ugd,SGUG_TR_FAILED);
 		}
 	}
-
 }
 
 static Evas_Object *_gallery_create_check(Evas_Object *obj, struct ug_data *ugd, int index, Init_State_Func func, int *state)
@@ -303,14 +301,12 @@ _gallery_genlist_icon_get(void *data, Evas_Object *obj, const char *part)
 	{
 		if (index == GALLERY_MAIN_MENU_REPEAT)
 		{
-			ugd->repeat_state = (int)gallery_key_get_repeat_state();
-			check = _gallery_create_check(obj, ugd, index, NULL, &ugd->repeat_state);
+			check = _gallery_create_check(obj, ugd, index, gallery_key_init_repeat_state, &ugd->repeat_state);
 			ugd->repeat_btn = check;
 		}
 		else if(index == GALLERY_MAIN_MENU_SHUFFLE)
 		{
-			ugd->shuffle_state = (int)gallery_key_get_shuffle_state();
-			check = _gallery_create_check(obj, ugd, index, NULL, &ugd->shuffle_state);
+			check = _gallery_create_check(obj, ugd, index, gallery_key_init_shuffle_state, &ugd->shuffle_state);
 			ugd->shuffle_btn = check;
 		}
 	}
@@ -411,19 +407,6 @@ _gallery_genlist_realized(void *data, Evas_Object *obj, void *event_info)
 
 	Elm_Object_Item *item = (Elm_Object_Item *)event_info;
 
-	int i = 0;
-	for(i=0; i<GALLERY_MAIN_MENU_ITEM_MAX; i++)
-	{
-		if(ugd->gl_it[i] == item)
-			break;
-	}
-	if(i == GALLERY_MAIN_MENU_ITEM_MAX)
-	{
-		gallery_info("extended style");
-		elm_object_item_signal_emit(item, "elm,state,center", "");
-		return;
-	}
-
 	int index = (int)elm_object_item_data_get(item);
 
 	if(index-1 == GALLERY_MAIN_MENU_TITLE)
@@ -474,8 +457,8 @@ _gallery_genlist_select_cb(void *data, Evas_Object *obj, void *event_info)
 
 	int param = (int )data;
 
+	int icon_state = 0;
 	bool expand_state = false;
-	bool bState = false;
 
 	Elm_Object_Item *item = (Elm_Object_Item *)event_info;
 
@@ -488,25 +471,27 @@ _gallery_genlist_select_cb(void *data, Evas_Object *obj, void *event_info)
 	}
 	else if(param == GALLERY_MAIN_MENU_REPEAT)
 	{
-		bState = !gallery_key_get_repeat_state();
+		gallery_key_init_repeat_state(&icon_state);
+		icon_state = !icon_state;
 
-		if (gallery_key_set_repeat_state(bState))
+		if(gallery_key_set_repeat_state(icon_state))
 		{
 			gallery_key_text_popup(ugd,SGUG_TR_FAILED);
 		}
 
-		elm_check_state_set(ugd->repeat_btn, bState);
+		elm_check_state_set(ugd->repeat_btn, (bool)icon_state);
 	}
 	else if(param == GALLERY_MAIN_MENU_SHUFFLE)
 	{
-		bState = !gallery_key_get_shuffle_state();
+		gallery_key_init_shuffle_state(&icon_state);
+		icon_state = !icon_state;
 
-		if(gallery_key_set_shuffle_state(bState))
+		if(gallery_key_set_shuffle_state(icon_state))
 		{
 			gallery_key_text_popup(ugd,SGUG_TR_FAILED);
 		}
 
-		elm_check_state_set(ugd->shuffle_btn,bState);
+		elm_check_state_set(ugd->shuffle_btn,(bool)icon_state);
 	}
 }
 
@@ -528,7 +513,6 @@ _gallery_genlist_items_add (Evas_Object *parent, struct ug_data *ugd)
 
 	evas_object_size_hint_weight_set(main_genlist, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
 	evas_object_size_hint_align_set(main_genlist, EVAS_HINT_FILL, EVAS_HINT_FILL);
-	evas_object_propagate_events_set(main_genlist, EINA_FALSE);
 
 	ugd->genlist = main_genlist;
 
@@ -558,13 +542,13 @@ _gallery_genlist_items_add (Evas_Object *parent, struct ug_data *ugd)
 	ugd->two_txt_icon_itc.func.state_get = NULL;
 	ugd->two_txt_icon_itc.func.del = NULL;
 
-	ugd->seperator_itc.item_style = "dialogue/separator";
+	ugd->seperator_itc.item_style = "grouptitle.dialogue.seperator";
 	ugd->seperator_itc.func.text_get = NULL;
 	ugd->seperator_itc.func.content_get = NULL;
 	ugd->seperator_itc.func.state_get = NULL;
 	ugd->seperator_itc.func.del = NULL;
 
-	ugd->seperator_end_itc.item_style = "dialogue/separator";
+	ugd->seperator_end_itc.item_style = "dialogue/separator/end";
 	ugd->seperator_end_itc.func.text_get = NULL;
 	ugd->seperator_end_itc.func.content_get = NULL;
 	ugd->seperator_end_itc.func.state_get = NULL;
