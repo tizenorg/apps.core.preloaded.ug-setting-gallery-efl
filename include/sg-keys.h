@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *	  http://www.tizenopensource.org/license
+ *	  http://floralicense.org/license/
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -22,11 +22,12 @@
 #include <vconf-keys.h>
 #include <stdbool.h>
 
-#define VCONFKEY_GALLERY_INTERVAL_TIME		"db/setting/gallery/interval_time"  //int
 
-#define VCONFKEY_GALLERY_REPEAT_STATE		"db/setting/gallery/repeat_state" //boolean
+#define VCONFKEY_GALLERY_INTERVAL_TIME		"db/gallery/setting/interval_time"  //int
 
-#define VCONFKEY_GALLERY_SHUFFLE_STATE		"db/setting/gallery/shuffle_state" //boolean
+#define VCONFKEY_GALLERY_REPEAT_STATE		"db/gallery/setting/repeat_state" //boolean
+
+#define VCONFKEY_GALLERY_SHUFFLE_STATE		"db/gallery/setting/shuffle_state" //boolean
 
 
 int gallery_key_init_current_time(double *val);
