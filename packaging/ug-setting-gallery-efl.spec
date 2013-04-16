@@ -48,7 +48,7 @@ export LD_LIBRARY_PATH=/usr/lib/ug:$LD_LIBRARY_PATH
 /usr/bin/vconftool set -t double db/gallery/setting/interval_time 3.0 -g 6514
 /usr/bin/vconftool set -t bool db/gallery/setting/repeat_state 0 -g 6514
 /usr/bin/vconftool set -t bool db/gallery/setting/shuffle_state 0 -g 6514
-/usr/bin/vconftool set -t bool db/gallery/setting/music_state 0 -g 6514
+/usr/bin/vconftool set -t string db/gallery/setting/ss_effect "Slide" -g 6514
 
 %postun -p /sbin/ldconfig
 
