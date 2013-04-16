@@ -22,11 +22,11 @@
 #include <vconf-keys.h>
 #include <stdbool.h>
 
-#define VCONFKEY_GALLERY_INTERVAL_TIME		"db/setting/gallery/interval_time"  //int
+#define VCONFKEY_GALLERY_INTERVAL_TIME		"db/gallery/setting/interval_time"  //int
 
-#define VCONFKEY_GALLERY_REPEAT_STATE		"db/setting/gallery/repeat_state" //boolean
+#define VCONFKEY_GALLERY_REPEAT_STATE		"db/gallery/setting/repeat_state" //boolean
 
-#define VCONFKEY_GALLERY_SHUFFLE_STATE		"db/setting/gallery/shuffle_state" //boolean
+#define VCONFKEY_GALLERY_SHUFFLE_STATE		"db/gallery/setting/shuffle_state" //boolean
 
 
 int gallery_key_init_current_time(double *val);
