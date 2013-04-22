@@ -1,6 +1,6 @@
 Name:       ug-setting-gallery-efl
 Summary:    UG setting gallery ELF
-Version:    1.0.42
+Version:    1.0.43
 Release:    1
 Group:      Applications
 License:    Flora Software License
