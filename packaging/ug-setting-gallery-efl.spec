@@ -5,6 +5,7 @@ Release:    1
 Group:      Applications
 License:    Flora Software License
 Source0:    %{name}-%{version}.tar.gz
+Source1001: 	ug-setting-gallery-efl.manifest
 BuildRequires: pkgconfig(elementary)
 BuildRequires: pkgconfig(edje)
 BuildRequires: pkgconfig(eina)
@@ -22,6 +23,7 @@ ug setting gallery efl.
 
 %prep
 %setup -q -n %{name}-%{version}
+cp %{SOURCE1001} .
 
 %build
 
@@ -53,7 +55,7 @@ export LD_LIBRARY_PATH=/usr/lib/ug:$LD_LIBRARY_PATH
 %postun -p /sbin/ldconfig
 
 %files
-%manifest ug-setting-gallery-efl.manifest
+%manifest %{name}.manifest
 %defattr(-,root,root,-)
 /usr/ug/lib/*
 /usr/ug/res/*
