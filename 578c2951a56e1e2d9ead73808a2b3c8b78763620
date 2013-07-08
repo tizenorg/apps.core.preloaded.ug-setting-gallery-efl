@@ -1,0 +1,8 @@
+Change-Id: I578c2951a56e1e2d9ead73808a2b3c8b78763620
+Code-Review+2: Ryan Ware <ware@linux.intel.com>
+Verified+1: Ryan Ware <ware@linux.intel.com>
+Submitted-by: Ryan Ware <ware@linux.intel.com>
+Submitted-at: Mon, 08 Jul 2013 10:07:35 -0700
+Reviewed-on: https://review.tizen.org/gerrit/4447
+Project: apps/core/preloaded/ug-setting-gallery-efl
+Branch: refs/heads/tizen
