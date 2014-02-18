@@ -1,3 +1,5 @@
+%bcond_with wayland
+
 Name:       ug-setting-gallery-efl
 Summary:    UG setting gallery ELF
 Version:    1.0.43
@@ -35,17 +37,23 @@ cp %{SOURCE1001} .
 
 export LDFLAGS+="-Wl,--rpath=%{_prefix}/lib -Wl,--as-needed"
 
-LDFLAGS="$LDFLAGS" cmake . -DCMAKE_INSTALL_PREFIX=%{_prefix} -DARCH=%{ARCH}
+LDFLAGS="$LDFLAGS" %cmake . -DCMAKE_INSTALL_PREFIX=%{_prefix} -DARCH=%{ARCH} \
+%if %{with wayland}
+         -DWAYLAND_SUPPORT=On
+%else
+         -DWAYLAND_SUPPORT=Off
+%endif
+
 
 make %{?jobs:-j%jobs}
 
 %install
 %make_install
-mkdir -p %{buildroot}/usr/share/license
+mkdir -p %{buildroot}%{_datarootdir}/license
 
 %post
 /sbin/ldconfig
-export LD_LIBRARY_PATH=/usr/lib/ug:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=%{_prefix}/lib/ug:$LD_LIBRARY_PATH
 
 /usr/bin/vconftool set -t double db/gallery/setting/interval_time 3.0 -g 6514
 /usr/bin/vconftool set -t bool db/gallery/setting/repeat_state 0 -g 6514
@@ -57,7 +65,7 @@ export LD_LIBRARY_PATH=/usr/lib/ug:$LD_LIBRARY_PATH
 %files
 %manifest %{name}.manifest
 %defattr(-,root,root,-)
-/usr/ug/lib/*
-/usr/ug/res/*
-/usr/share/license/%{name}
+%{_prefix}/ug/lib/*
+%{_prefix}/ug/res/*
+%license %{_datarootdir}/license/%{name}
 
