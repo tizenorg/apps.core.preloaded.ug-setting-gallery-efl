@@ -1,3 +1,5 @@
+%bcond_with x
+
 Name:       ug-setting-gallery-efl
 Summary:    UG setting gallery ELF
 Version:    1.0.43
@@ -13,6 +15,11 @@ BuildRequires: pkgconfig(evas)
 BuildRequires: pkgconfig(dlog)
 BuildRequires: pkgconfig(vconf)
 BuildRequires: pkgconfig(ui-gadget-1)
+%if %{with x}
+BuildRequires: pkgconfig(x11)
+%else
+ExclusiveArch:
+%endif
 BuildRequires: cmake
 BuildRequires: gettext
 Requires(post):   /sbin/ldconfig
