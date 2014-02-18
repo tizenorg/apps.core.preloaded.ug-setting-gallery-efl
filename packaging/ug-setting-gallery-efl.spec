@@ -1,3 +1,5 @@
+%bcond_with wayland
+
 Name:       ug-setting-gallery-efl
 Summary:    UG setting gallery ELF
 Version:    1.0.43
@@ -35,7 +37,13 @@ cp %{SOURCE1001} .
 
 export LDFLAGS+="-Wl,--rpath=%{_prefix}/lib -Wl,--as-needed"
 
-LDFLAGS="$LDFLAGS" cmake . -DCMAKE_INSTALL_PREFIX=%{_prefix} -DARCH=%{ARCH}
+LDFLAGS="$LDFLAGS" %cmake . -DCMAKE_INSTALL_PREFIX=%{_prefix} -DARCH=%{ARCH} \
+%if %{with wayland}
+         -DWAYLAND_SUPPORT=On
+%else
+         -DWAYLAND_SUPPORT=Off
+%endif
+
 
 make %{?jobs:-j%jobs}
 
