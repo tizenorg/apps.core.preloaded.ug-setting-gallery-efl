@@ -5,7 +5,7 @@ Summary:    UG setting gallery ELF
 Version:    1.0.43
 Release:    1
 Group:      Applications
-License:    Flora Software License
+License:    Apache-2.0
 Source0:    %{name}-%{version}.tar.gz
 Source1001: 	ug-setting-gallery-efl.manifest
 BuildRequires: pkgconfig(elementary)
