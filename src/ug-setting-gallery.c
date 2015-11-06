@@ -658,7 +658,7 @@ static Evas_Object *_gallery_create_bg(Evas_Object *parent)
 }
 
 static void *
-_on_create(ui_gadget_h ug, enum ug_mode mode, service_h data, void *priv)
+_on_create(ui_gadget_h ug, enum ug_mode mode, app_control_h data, void *priv)
 {
 	gallery_retvm_if(!ug, NULL, "ug is NULL, check it !!");
 	gallery_retvm_if(!priv, NULL, "priv is NULL, check it !!");
@@ -710,12 +710,12 @@ _on_create(ui_gadget_h ug, enum ug_mode mode, service_h data, void *priv)
 }
 
 static void
-_on_message(ui_gadget_h ug, service_h msg, service_h data, void *priv)
+_on_message(ui_gadget_h ug, app_control_h msg, app_control_h data, void *priv)
 {
 }
 
 static void
-_on_event(ui_gadget_h ug, enum ug_event event, service_h data, void *priv)
+_on_event(ui_gadget_h ug, enum ug_event event, app_control_h data, void *priv)
 {
 	//struct ug_data *ugd = (struct ug_data *)priv;
 
@@ -740,24 +740,24 @@ _on_event(ui_gadget_h ug, enum ug_event event, service_h data, void *priv)
 }
 
 static void
-_on_start(ui_gadget_h ug, service_h data, void *priv)
+_on_start(ui_gadget_h ug, app_control_h data, void *priv)
 {
 }
 
 static void
-_on_pause(ui_gadget_h ug, service_h data, void *priv)
-{
-
-}
-
-static void
-_on_resume(ui_gadget_h ug, service_h data, void *priv)
+_on_pause(ui_gadget_h ug, app_control_h data, void *priv)
 {
 
 }
 
 static void
-_on_destroy(ui_gadget_h ug, service_h data, void *priv)
+_on_resume(ui_gadget_h ug, app_control_h data, void *priv)
+{
+
+}
+
+static void
+_on_destroy(ui_gadget_h ug, app_control_h data, void *priv)
 {
 	struct ug_data *ugd;
 
@@ -773,7 +773,7 @@ _on_destroy(ui_gadget_h ug, service_h data, void *priv)
 }
 
 static void
-_on_key_event(ui_gadget_h ug, enum ug_key_event event, service_h data, void *priv)
+_on_key_event(ui_gadget_h ug, enum ug_key_event event, app_control_h data, void *priv)
 {
 
 }
@@ -801,7 +801,7 @@ UG_MODULE_INIT(struct ug_module_ops *ops)
 	return 0;
 }
 
-UG_MODULE_API int setting_plugin_reset(service_h data, void *priv)
+UG_MODULE_API int setting_plugin_reset(app_control_h data, void *priv)
 {
 	gallery_info("Reset the settings start");
 
